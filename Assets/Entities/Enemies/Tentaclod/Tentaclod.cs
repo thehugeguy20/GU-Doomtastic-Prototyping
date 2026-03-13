@@ -13,16 +13,10 @@ public class Tentaclod : MonoBehaviour
     public DeathState deathState;
     public IdleState idleState;
     
-    EntityState state;
-
-    private bool hunting = false;
+    internal EntityState state;
 
     void Awake()
     {
-        EntityState newthing = state;
-
-
-        state.Setup(animator, this);
         hurtState.Setup(animator, this);
         attackState.Setup(animator, this);
         deathState.Setup(animator, this);
@@ -30,26 +24,52 @@ public class Tentaclod : MonoBehaviour
         moveState.Setup(animator, this);
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        state = idleState;
+    }
+
     void Update()
     {
-        if (hunting == true)
-        {
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                hunting = false;
-                Debug.Log("stop hunt");
+                state.Exit();
+                EntityState lastState = state;
                 state = idleState;
-                state.Enter();
+                state.Enter(lastState);
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.H))
-        {
-            hunting = true;
-            state = moveState;
-            state.Enter();
-            Debug.Log("START hunt");
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                state.Exit();
+                EntityState lastState = state;
+                state = moveState;
+                state.Enter(lastState);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state.Exit();
+                EntityState lastState = state;
+                state = attackState;
+                state.Enter(lastState);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                state.Exit();
+                EntityState lastState = state;
+                state = deathState;
+                state.Enter(lastState);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                state.Exit();
+                EntityState lastState = state;
+                state = hurtState;
+                state.Enter(lastState);
+            }
+        
 
         state.Do();
     }

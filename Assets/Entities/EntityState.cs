@@ -3,19 +3,20 @@ using UnityEngine.AI;
 
 public abstract class EntityState : MonoBehaviour
 {
-
     public bool isComplete {get; protected set;}
 
     protected float startTime;
 
     protected Tentaclod host;
 
-    internal Animator animator;
+    protected Animator animator;
+
+    protected EntityState lastState;
 
     public float time => Time.time - startTime;
 
 
-    public virtual void Enter()
+    public virtual void Enter(EntityState _lastState)
     {
         
     }

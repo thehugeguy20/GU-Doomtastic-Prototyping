@@ -4,14 +4,16 @@ using UnityEngine.AI;
 public class MoveState : EntityState
 {
     [SerializeField] private NavMeshAgent agent;
-    public override void Enter()
+    GameObject player;
+
+    public override void Enter(EntityState _lastState)
     {
+        player = GameObject.Find("Player");
         animator.Play("Float");
     }
     public override void Do()
     {
-        GameObject playerObj = GameObject.Find("Player");
-        agent.SetDestination(playerObj.transform.position);
+        agent.SetDestination(player.transform.position);
     }
     public override void FixedDo()
     {
