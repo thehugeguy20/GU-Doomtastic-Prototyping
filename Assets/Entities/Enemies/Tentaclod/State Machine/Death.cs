@@ -4,7 +4,7 @@ public class DeathState : EntityState
 {
     public override void Enter(EntityState _lastState)
     {
-        animator.Play("Death");
+        animator.Play(anim.name);
     }
     public override void Do()
     {

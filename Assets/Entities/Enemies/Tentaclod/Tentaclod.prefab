@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6915e4b974554709836a30565678a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveState
+  anim: {fileID: 778045159576330300, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
   agent: {fileID: 4984170748759402780}
 --- !u!1 &1321204436577212453
 GameObject:
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0562f6ab22050444dbf8404eb9625e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackState
+  anim: {fileID: 6720303635017113406, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
 --- !u!1 &4102012463931480542
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5502839815519550112}
@@ -350,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626eb58bccfd841fb83e863383d81801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathState
+  anim: {fileID: 4348485665485846014, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
 --- !u!1 &5290417211505298153
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8477bd36c1f7a45bb9a522b6258de50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HurtState
+  anim: {fileID: 8017390324079358001, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
 --- !u!1 &6204847470058817502
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a229a5a7e7a945aba83e07e193a9a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IdleState
+  anim: {fileID: 778045159576330300, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
   agent: {fileID: 4984170748759402780}
 --- !u!1 &8253770971166166790
 GameObject:

@@ -9,7 +9,7 @@ public class MoveState : EntityState
     public override void Enter(EntityState _lastState)
     {
         player = GameObject.Find("Player");
-        animator.Play("Float");
+        animator.Play(anim.name);
     }
     public override void Do()
     {

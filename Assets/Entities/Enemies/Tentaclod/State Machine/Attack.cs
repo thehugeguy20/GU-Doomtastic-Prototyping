@@ -4,7 +4,7 @@ public class AttackState : EntityState
 {
     public override void Enter(EntityState _lastState)
     {
-        animator.Play("Attack");
+        animator.Play(anim.name);
     }
     public override void Do()
     {
@@ -16,6 +16,6 @@ public class AttackState : EntityState
     }
     public override void Exit()
     {
-        
+
     }
 }

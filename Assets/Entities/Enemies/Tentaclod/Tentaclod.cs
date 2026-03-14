@@ -1,10 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Tentaclod : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-
     [SerializeField] protected Animator animator;
 
     public MoveState moveState;
@@ -33,43 +33,26 @@ public class Tentaclod : MonoBehaviour
     {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                state.Exit();
-                EntityState lastState = state;
-                state = idleState;
-                state.Enter(lastState);
+                state.ChangeState(idleState);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                state.Exit();
-                EntityState lastState = state;
-                state = moveState;
-                state.Enter(lastState);
+                state.ChangeState(moveState);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                state.ChangeState(attackState);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                state.Exit();
-                EntityState lastState = state;
-                state = attackState;
-                state.Enter(lastState);
+                state.ChangeState(deathState);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha4))
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                state.Exit();
-                EntityState lastState = state;
-                state = deathState;
-                state.Enter(lastState);
+                state.ChangeState(hurtState);
             }
-
-            if (Input.GetKeyDown(KeyCode.Alpha5))
-            {
-                state.Exit();
-                EntityState lastState = state;
-                state = hurtState;
-                state.Enter(lastState);
-            }
-        
 
         state.Do();
     }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +11,8 @@ public abstract class EntityState : MonoBehaviour
     protected Tentaclod host;
 
     protected Animator animator;
+
+    public AnimationClip anim;
 
     protected EntityState lastState;
 
@@ -31,6 +34,13 @@ public abstract class EntityState : MonoBehaviour
     public virtual void Exit()
     {
         
+    }
+
+    public void ChangeState(EntityState _state)
+    {
+        Exit();
+        host.state = _state;
+        host.state.Enter(this);
     }
 
     public void Setup(Animator _animator, Tentaclod _host)

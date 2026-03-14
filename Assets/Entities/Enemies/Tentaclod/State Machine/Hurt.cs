@@ -6,14 +6,14 @@ public class HurtState : EntityState
 
     public override void Enter(EntityState _lastState)
     {
-        animator.Play("Hurt");
+        animator.Play(anim.name);
         startTime = Time.time;
     }
     public override void Do()
     {
         if (time >= hurtLength)
         {
-            Exit();
+            ChangeState(host.moveState);
         }
     }
     public override void FixedDo()
@@ -22,8 +22,7 @@ public class HurtState : EntityState
     }
     public override void Exit()
     {
-        host.state = host.moveState;
-        host.state.Enter(this);
+        
     }
-
+    
 }

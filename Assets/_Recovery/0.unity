@@ -18281,6 +18281,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5238820401998598406, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238820401998598406, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238820401998598406, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238820401998598406, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.60764
       objectReference: {fileID: 0}
@@ -28509,6 +28521,18 @@ PrefabInstance:
     - target: {fileID: 4102012463931480542, guid: b9c3b86ba2871430db895ebaec2e210d, type: 3}
       propertyPath: m_Name
       value: Tentaclod
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320096245329029729, guid: b9c3b86ba2871430db895ebaec2e210d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320096245329029729, guid: b9c3b86ba2871430db895ebaec2e210d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320096245329029729, guid: b9c3b86ba2871430db895ebaec2e210d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7320096245329029729, guid: b9c3b86ba2871430db895ebaec2e210d, type: 3}
       propertyPath: m_LocalPosition.x
