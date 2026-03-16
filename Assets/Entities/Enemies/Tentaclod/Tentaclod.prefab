@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401793914135264829}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6915e4b974554709836a30565678a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveState
+  manager: {fileID: 6646821961617056076}
+  animator: {fileID: 8959457960335963858}
   anim: {fileID: 778045159576330300, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
   agent: {fileID: 4984170748759402780}
 --- !u!1 &1321204436577212453
@@ -90,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0562f6ab22050444dbf8404eb9625e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackState
+  manager: {fileID: 6646821961617056076}
+  animator: {fileID: 8959457960335963858}
   anim: {fileID: 6720303635017113406, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
 --- !u!1 &4102012463931480542
 GameObject:
@@ -191,11 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tentaclod
   agent: {fileID: 4984170748759402780}
   animator: {fileID: 8959457960335963858}
-  moveState: {fileID: 4641662749999763883}
-  hurtState: {fileID: 4494337863201095459}
-  attackState: {fileID: 2089056891297872423}
-  deathState: {fileID: 44284338016596968}
-  idleState: {fileID: 5550057638684351325}
+  manager: {fileID: 6646821961617056076}
 --- !u!1 &4218369256216724571
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4979896895562526534}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626eb58bccfd841fb83e863383d81801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathState
+  manager: {fileID: 6646821961617056076}
+  animator: {fileID: 8959457960335963858}
   anim: {fileID: 4348485665485846014, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
 --- !u!1 &5290417211505298153
 GameObject:
@@ -378,7 +380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5290417211505298153}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -397,6 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8477bd36c1f7a45bb9a522b6258de50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HurtState
+  manager: {fileID: 6646821961617056076}
+  animator: {fileID: 8959457960335963858}
   anim: {fileID: 8017390324079358001, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
 --- !u!1 &6204847470058817502
 GameObject:
@@ -423,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6204847470058817502}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -442,6 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a229a5a7e7a945aba83e07e193a9a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IdleState
+  manager: {fileID: 6646821961617056076}
+  animator: {fileID: 8959457960335963858}
   anim: {fileID: 778045159576330300, guid: 0ba98ab76ea3d4490aec28e170686d85, type: 3}
   agent: {fileID: 4984170748759402780}
 --- !u!1 &8253770971166166790
@@ -453,8 +459,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361689164871289356}
+  - component: {fileID: 6646821961617056076}
   m_Layer: 0
-  m_Name: Behaviours
+  m_Name: State Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,6 +487,25 @@ Transform:
   - {fileID: 3587505566689641074}
   m_Father: {fileID: 7320096245329029729}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6646821961617056076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253770971166166790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b88598d9d784045abbd17058202d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityStateManager
+  defaultState: {fileID: 5550057638684351325}
+  states:
+  - {fileID: 2089056891297872423}
+  - {fileID: 44284338016596968}
+  - {fileID: 4494337863201095459}
+  - {fileID: 5550057638684351325}
+  - {fileID: 4641662749999763883}
 --- !u!1001 &7803623612714564378
 PrefabInstance:
   m_ObjectHideFlags: 0

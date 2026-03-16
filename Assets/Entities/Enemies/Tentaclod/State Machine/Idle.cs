@@ -4,6 +4,8 @@ using UnityEngine.AI;
 public class IdleState : EntityState
 {
     [SerializeField] private NavMeshAgent agent;
+    
+
     public override void Enter(EntityState _lastState)
     {
         animator.Play("Float");

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HurtState : EntityState
@@ -11,10 +12,13 @@ public class HurtState : EntityState
     }
     public override void Do()
     {
-        if (time >= hurtLength)
+        Debug.Log(time);
+        if (time >= hurtLength ) 
         {
-            ChangeState(host.moveState);
+            Debug.Log("TRYING TO CHANGE STATE TO HURT");
+            manager.state.ChangeState(manager.FindState("Move"));
         }
+
     }
     public override void FixedDo()
     {

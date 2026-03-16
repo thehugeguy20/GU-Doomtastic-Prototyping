@@ -8,15 +8,20 @@ public abstract class EntityState : MonoBehaviour
 
     protected float startTime;
 
-    protected Tentaclod host;
+    public EntityStateManager manager;
 
-    protected Animator animator;
+    public Animator animator;
 
     public AnimationClip anim;
 
     protected EntityState lastState;
 
     public float time => Time.time - startTime;
+
+    void Awake()
+    {
+        manager = transform.parent.GetComponent<EntityStateManager>();
+    }
 
 
     public virtual void Enter(EntityState _lastState)
@@ -38,14 +43,13 @@ public abstract class EntityState : MonoBehaviour
 
     public void ChangeState(EntityState _state)
     {
-        Exit();
-        host.state = _state;
-        host.state.Enter(this);
-    }
+        manager.state.Exit();
 
-    public void Setup(Animator _animator, Tentaclod _host)
-    {
-        animator = _animator;
-        host = _host;
+        if (_state != null)
+        {    
+            manager.state = _state;
+            manager.state.Enter(this);
+        }
+        else { Debug.Log($"STATE IS NULL, I AM {this}"); }
     }
 }
