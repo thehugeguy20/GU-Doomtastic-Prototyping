@@ -2,13 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class EntityState : MonoBehaviour
+public abstract class ObjectState : MonoBehaviour
 {
     public bool isComplete {get; protected set;}
 
     protected float startTime;
 
-    public EntityStateManager manager;
+    public ObjectStateManager manager;
 
     public Animator animator;
 
@@ -18,11 +18,9 @@ public abstract class EntityState : MonoBehaviour
 
     void Awake()
     {
-        manager = transform.parent.GetComponent<EntityStateManager>();
+        manager = transform.parent.GetComponent<ObjectStateManager>();
     }
-
-
-    public virtual void Enter(EntityState _lastState)
+    public virtual void Enter(ObjectState _lastState)
     {
         
     }
@@ -34,14 +32,14 @@ public abstract class EntityState : MonoBehaviour
     {
         
     }
-    public virtual void Exit()
+    public virtual void Exit(ObjectState _nextState)
     {
         
     }
 
-    public void ChangeState(EntityState _state)
+    public void ChangeState(ObjectState _state)
     {
-        manager.state.Exit();
+        manager.state.Exit(_state);
 
         if (_state != null)
         {    
