@@ -5,8 +5,6 @@ public class swordtemp : MonoBehaviour
 {
     [SerializeField] protected ObjectStateManager manager;
 
-    internal ObjectState state;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))

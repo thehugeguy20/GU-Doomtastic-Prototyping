@@ -1,4 +1,5 @@
 using System.Collections;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,9 +7,10 @@ public abstract class EntityState : MonoBehaviour
 {
     public bool isComplete {get; protected set;}
 
+    
     protected float startTime;
 
-    public EntityStateManager manager;
+    protected EntityStateManager manager;
 
     public Animator animator;
 
