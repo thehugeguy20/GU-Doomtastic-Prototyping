@@ -1,16 +1,17 @@
 using UnityEngine;
 
+
+
 public class Interactor : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Transform InteractorSource;
+    public float InteractRange;
 
-    // Update is called once per frame
-    void Update()
+    public void CallInteraction(GameObject obj)
     {
-        
+        if (obj.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.Interact(this.gameObject);
+        }
     }
 }

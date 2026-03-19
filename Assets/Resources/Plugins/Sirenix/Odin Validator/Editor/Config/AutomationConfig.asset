@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: AutomationConfig
   m_EditorClassIdentifier: Sirenix.OdinValidator.Editor.dll::Sirenix.OdinValidator.Editor.AutomationConfig
   OnPlayMode: 0
-  OnPlayModeIfWarnings: 0
+  OnPlayModeIfWarnings: 4
   OnPlayModeIfErrors: 3
   OnPlayModeAlwaysCompleteValidationFully: 0
   OnPlayModeFlashScreen: 0
   OnPlayModeSetup:
     Profile: 0
-    ProfileAsset: {fileID: 0}
+    ProfileAsset: {fileID: 11400000, guid: a5b9765d03a7c42b9bea46f6131b4aa8, type: 2}
   OnBuild: 0
   OnBuildIfWarnings: 0
   OnBuildIfErrors: 3
@@ -28,11 +28,11 @@ MonoBehaviour:
   OnBuildSetup:
     Profile: 0
     ProfileAsset: {fileID: 0}
-  OnProjectStartup: 0
-  OnProjectStartupIfWarnings: 0
+  OnProjectStartup: 1
+  OnProjectStartupIfWarnings: 2
   OnProjectStartupIfErrors: 1
   OnProjectStartupAlwaysCompleteValidationFully: 0
   OnProjectStartupFlashScreen: 0
   OnProjectStartupSetup:
     Profile: 0
-    ProfileAsset: {fileID: 0}
+    ProfileAsset: {fileID: 11400000, guid: a5b9765d03a7c42b9bea46f6131b4aa8, type: 2}
