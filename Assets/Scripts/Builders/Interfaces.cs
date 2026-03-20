@@ -17,3 +17,8 @@ public interface IInteractable
 {
     void Interact(GameObject interactor);
 }
+
+public interface IKnockbackable
+{
+    void GetKnockbedBack(Vector3 force);
+}

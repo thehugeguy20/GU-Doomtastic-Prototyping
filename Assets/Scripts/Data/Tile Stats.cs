@@ -4,7 +4,7 @@ public class TileStats : MonoBehaviour
 {
 
     [SerializeField]
-    Attributes stats = new(Attributes.Ai.clumsy, Attributes.Physical.small, Attributes.Modifier.poison);
+    Attributes stats = new(Attributes.Ai.Clumsy, Attributes.Physical.Small, Attributes.Modifier.Poison);
 
 
 }

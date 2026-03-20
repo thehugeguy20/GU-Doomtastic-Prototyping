@@ -15,12 +15,6 @@ public class Swing : ObjectState
     }
     public override void Do()
     {
-        // if(rayCaster.Cast().collider == null)
-        // {
-        //     Debug.Log("RAYCASTER COLLIDEr NULL");
-        // }
-
-        
 
         if(hit == false && time >= anim.length-anim.length/3)
         {
@@ -28,17 +22,15 @@ public class Swing : ObjectState
 
             if(hitInfo.collider != null)
             {
-                Debug.Log(hitInfo.collider.gameObject.name);
-            }
-
-            //Instantiate(waterspawn, rayCaster.rayOrigin);
-
-            if(hitInfo.collider != null)
-            {
                 foreach (IInteractable iinteractable in hitInfo.collider.gameObject.GetComponents<IInteractable>())
                 {
                     iinteractable.Interact(this.gameObject);
                 }
+
+                // if(hitInfo.collider.TryGetComponent(out IKnockbackable knockbackable))
+                // {
+                    
+                // }
             }
 
             hit = true;

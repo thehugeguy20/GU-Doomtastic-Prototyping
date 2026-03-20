@@ -111,6 +111,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5271115728073418253}
   - component: {fileID: 6051589344956517590}
+  - component: {fileID: 8187864999255042049}
+  - component: {fileID: 8473223652896465892}
+  - component: {fileID: 7055054421795684711}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -156,6 +159,44 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8187864999255042049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059709205328724615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e52022568f74cf3a048cf4448a6ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemInit
+--- !u!114 &8473223652896465892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059709205328724615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85a5454db3df41c5af984aa923752f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemManager
+  ItemData: {fileID: 0}
+--- !u!114 &7055054421795684711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059709205328724615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4268ef92b2645fb9359505ada5b0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  billboardType: 0
 --- !u!1 &4169390975333384051
 GameObject:
   m_ObjectHideFlags: 0

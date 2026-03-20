@@ -15,7 +15,7 @@ public class DeathState : EntityState
     {
         
     }
-    public override void Exit()
+    public override void Exit(EntityState _nextState)
     {
         
     }

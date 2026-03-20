@@ -63,9 +63,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5271115728073418253}
+  - component: {fileID: 6053706908767912919}
   - component: {fileID: 6051589344956517590}
   - component: {fileID: 2984187335687318022}
-  - component: {fileID: 2967603126580906582}
+  - component: {fileID: 2869291429184272312}
+  - component: {fileID: 5420300308494639650}
+  - component: {fileID: 7228586664948052414}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -83,13 +86,26 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.4410624, y: -0.611158, z: 0.23202522, w: 0.61490995}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.8, y: 1.8000001, z: 1.8000001}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 4878812349040925554}
   - {fileID: 2841482055531998392}
   - {fileID: 7004665163199373642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -15, y: -98.1, z: 58.6}
+--- !u!114 &6053706908767912919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059709205328724615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e52022568f74cf3a048cf4448a6ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!95 &6051589344956517590
 Animator:
   serializedVersion: 7
@@ -127,7 +143,7 @@ MonoBehaviour:
   manager: {fileID: 3744990370883484796}
   sword: {fileID: 2059709205328724615}
   holder: {fileID: 0}
---- !u!114 &2967603126580906582
+--- !u!114 &2869291429184272312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,9 +152,121 @@ MonoBehaviour:
   m_GameObject: {fileID: 2059709205328724615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2318c679d628b4692bb503ef5b106dd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 07e52022568f74cf3a048cf4448a6ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemInit
+--- !u!114 &5420300308494639650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059709205328724615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85a5454db3df41c5af984aa923752f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ItemData: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
+--- !u!114 &7228586664948052414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059709205328724615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4268ef92b2645fb9359505ada5b0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  billboardType: 1
+--- !u!1 &2641338225645496935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4878812349040925554}
+  - component: {fileID: 7294556743983491047}
+  - component: {fileID: 3774503724771652310}
+  - component: {fileID: 623478617494580051}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4878812349040925554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641338225645496935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5271115728073418253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &7294556743983491047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641338225645496935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2c4eff29be642ec8da4db025cf0898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  player: {fileID: 0}
+--- !u!136 &3774503724771652310
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641338225645496935}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4220458
+  m_Height: 1.2893003
+  m_Direction: 0
+  m_Center: {x: -0.0012669966, y: 0.040560428, z: -0.041726798}
+--- !u!114 &623478617494580051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641338225645496935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740011a53bf49483b9f2373daf39fd7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  setme: {fileID: 5271115728073418253}
+  parent: {fileID: 2059709205328724615}
+  billboard: {fileID: 7228586664948052414}
+  col: {fileID: 3774503724771652310}
 --- !u!1 &4169390975333384051
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +580,7 @@ MonoBehaviour:
   animator: {fileID: 6051589344956517590}
   anim: {fileID: 7400000, guid: d0d5920e54653477f953184aeb6dbfea, type: 2}
   rayCaster: {fileID: 476838560607949722}
+  waterspawn: {fileID: 1960327731796735083, guid: a80aece3e2826430bb4cd65709fc718a, type: 3}
 --- !u!114 &476838560607949722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e683effdce1543ffbb64753ba7995b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Finder
-  findType: 1
+  findType: 0
   fromWhere: 0
-  distance: 1
-  sphereRadius: 0.3
+  distance: 5
+  sphereRadius: 0.1

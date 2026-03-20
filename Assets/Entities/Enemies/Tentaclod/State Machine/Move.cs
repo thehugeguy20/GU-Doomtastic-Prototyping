@@ -20,7 +20,7 @@ public class MoveState : EntityState
     {
         
     }
-    public override void Exit()
+    public override void Exit(EntityState _nextState)
     {
         agent.SetDestination(this.transform.position);
     }
