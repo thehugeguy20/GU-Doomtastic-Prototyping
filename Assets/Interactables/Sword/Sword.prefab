@@ -66,7 +66,6 @@ GameObject:
   - component: {fileID: 6053706908767912919}
   - component: {fileID: 6051589344956517590}
   - component: {fileID: 2984187335687318022}
-  - component: {fileID: 2869291429184272312}
   - component: {fileID: 5420300308494639650}
   - component: {fileID: 7228586664948052414}
   m_Layer: 0
@@ -106,6 +105,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e52022568f74cf3a048cf4448a6ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  parts:
+  - {fileID: 2059709205328724615}
+  - {fileID: 2641338225645496935}
+  - {fileID: 4169390975333384051}
+  - {fileID: 6129785133392817828}
+  - {fileID: 1979954428293339954}
+  - {fileID: 7197820454805951146}
+  - {fileID: 6083421257124987445}
+  - {fileID: 4673487771006965018}
+  - {fileID: 7490417204305705367}
+  host: {fileID: 2059709205328724615}
 --- !u!95 &6051589344956517590
 Animator:
   serializedVersion: 7
@@ -140,21 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b62fbd0ec2c44d2b9ff9a0efb3a1245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Primary: 323
+  Secondary: 324
+  Tertiary: 101
   manager: {fileID: 3744990370883484796}
   sword: {fileID: 2059709205328724615}
-  holder: {fileID: 0}
---- !u!114 &2869291429184272312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059709205328724615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e52022568f74cf3a048cf4448a6ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemInit
+  parent: {fileID: 0}
 --- !u!114 &5420300308494639650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +191,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4878812349040925554}
-  - component: {fileID: 7294556743983491047}
   - component: {fileID: 3774503724771652310}
   - component: {fileID: 623478617494580051}
   m_Layer: 0
@@ -215,19 +215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5271115728073418253}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
---- !u!114 &7294556743983491047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641338225645496935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2c4eff29be642ec8da4db025cf0898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  player: {fileID: 0}
 --- !u!136 &3774503724771652310
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -263,10 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740011a53bf49483b9f2373daf39fd7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  setme: {fileID: 5271115728073418253}
+  myPrefab: {fileID: 5271115728073418253}
   parent: {fileID: 2059709205328724615}
   billboard: {fileID: 7228586664948052414}
   col: {fileID: 3774503724771652310}
+  holder: {fileID: 0}
 --- !u!1 &4169390975333384051
 GameObject:
   m_ObjectHideFlags: 0

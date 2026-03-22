@@ -4,5 +4,5 @@ using UnityEngine.AI;
 
 public abstract class ObjectState : State<ObjectStateManager, ObjectState>
 {
-    
+    internal ItemManager itemManager => manager.itemManager;
 }

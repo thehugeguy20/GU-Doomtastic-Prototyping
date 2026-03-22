@@ -2,17 +2,13 @@ using UnityEngine;
 
 public class ItemInit : DependencyHandler
 {
-    public override void DependencyInjection(GameObject host)
+    void Awake()
     {
-        var deps = new Dependencies
+        deps = new()
         {
-            transform = host.transform,
-            camera = host.GetComponentInChildren<Camera>(),
+            objectTransform = host.transform,
+            targetTransform = host.transform,
+            camera = host.GetComponentInChildren<Camera>(),        
         };
-
-        foreach (var req in GetComponentsInChildren<IHasDependencies>())
-        {
-            req.SetDependencies(deps);
-        }
     }
 }

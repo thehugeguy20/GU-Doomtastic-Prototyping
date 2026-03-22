@@ -12,10 +12,8 @@ public class HurtState : EntityState
     }
     public override void Do()
     {
-        Debug.Log(time);
         if (time >= hurtLength ) 
         {
-            Debug.Log("TRYING TO CHANGE STATE TO HURT");
             manager.state.ChangeState(manager.FindState("Move"));
         }
 

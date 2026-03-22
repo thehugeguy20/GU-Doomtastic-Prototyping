@@ -5,15 +5,15 @@ public class Hold : ObjectState
 
     public override void Enter(ObjectState _lastState)
     {
-        animator.Play(anim.name);
+        animator.CrossFadeInFixedTime(anim.name, 0.1f);
         startTime = Time.time;
     }
     public override void Do()
     {
-        // if (time >= anim.length)
-        // {
-        //     manager.state.ChangeState(manager.FindState("Swing"));
-        // }
+        if (itemManager.charge != float.NaN)
+        {
+            itemManager.charge = Mathf.Clamp((float)itemManager.charge + time/150, 0, 1);
+        }
     }
     public override void FixedDo()
     {

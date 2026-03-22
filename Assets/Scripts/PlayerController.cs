@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private RayCaster rayCaster;
     [SerializeField] private GameObject rightHand;
+    [SerializeField] private GameObject player;
 
     void Update()
     {
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
             if(hitInfo.collider.gameObject.TryGetComponent<Pickup>(out Pickup pickup))
             {
+                pickup.holder = player;
                 pickup.Interact(rightHand);
             }
         }

@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class PlayerInit : DependencyHandler
 {
-    [SerializeField] private GameObject player;
+    // [SerializeField] private Transform _objectTransform;
+    // private Transform _targetTransform => _objectTransform;
 
-    public override void DependencyInjection(GameObject host)
+    void Awake()
     {
-        var deps = new Dependencies
+        deps = new()
         {
-            transform = host.transform,
-            camera = host.GetComponentInChildren<Camera>(),
+            objectTransform = host.transform,
+            targetTransform = host.transform,
+            camera = host.GetComponentInChildren<Camera>(),            
         };
-
-        foreach (var req in host.GetComponentsInChildren<IHasDependencies>())
-        {
-            req.SetDependencies(deps);
-            Debug.Log("setting dependency for" + req);
-        }
     }
 
-    void Start()
-    {
-        Debug.Log("hello");
-        DependencyInjection(player);
-    }
 }

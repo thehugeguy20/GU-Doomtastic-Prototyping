@@ -1,17 +1,10 @@
 using UnityEngine;
 
-public struct ItemBlackboard
-{
-    
-}
 
 public class ItemManager : MonoBehaviour
 {
-    protected ItemBlackboard blackboard = new()
-    {
-        
-    };
-
+    [SerializeField] internal float charge = float.NaN;
+    
     [SerializeField] private ScriptableObject ItemData;
 
     public ScriptableObject itemData => ItemData;

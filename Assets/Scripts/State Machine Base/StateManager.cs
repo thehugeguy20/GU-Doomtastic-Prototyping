@@ -1,13 +1,13 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class StateManager<TManager, TState> : MonoBehaviour
 where TManager : StateManager<TManager, TState>
 where TState : State<TManager, TState>
-
 {
-
     internal TState state;
+    public TState pendingState;
     [SerializeField] private TState defaultState;
     public List<TState> states = new();
 
@@ -19,6 +19,11 @@ where TState : State<TManager, TState>
     void Update()
     {
         state.Do();
+    }
+
+    public void RequestState(string name)
+    {
+        pendingState = FindState(name);
     }
 
     public TState FindState(string name)

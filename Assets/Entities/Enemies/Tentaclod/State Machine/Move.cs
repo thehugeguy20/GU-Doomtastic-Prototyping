@@ -14,7 +14,10 @@ public class MoveState : EntityState
     }
     public override void Do()
     {
-        agent.SetDestination(player.transform.position);
+        if(agent.enabled == true)
+        {
+            agent.SetDestination(player.transform.position);
+        }
     }
     public override void FixedDo()
     {
