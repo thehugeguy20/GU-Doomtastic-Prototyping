@@ -6,17 +6,17 @@ public class Attributes
 {
     public enum Ai
     {
-        Normal, Clumsy, Skittish, Angry
+        Null, Normal, Clumsy, Skittish, Angry
     }
 
     public enum Physical
     {
-        Normal, Large, Small, Huge, Tiny
+        Null, Normal, Large, Small, Huge, Tiny
     }
 
     public enum Modifier
     {
-        Normal, Poison, Fire, Ice
+        Null, Normal, Poison, Fire, Ice
     }
 
 

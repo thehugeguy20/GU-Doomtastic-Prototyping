@@ -38,4 +38,10 @@ where TState : State<TManager, TState>
         return null;
     }
 
+    public void EnterDefaultState()
+    {
+        state = defaultState;
+        state.Enter(null);
+    }
+
 }

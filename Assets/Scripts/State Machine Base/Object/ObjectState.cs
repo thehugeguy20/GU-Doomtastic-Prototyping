@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class ObjectState : State<ObjectStateManager, ObjectState>
+public abstract class ItemState : State<ItemStateManager, ItemState>
 {
-    internal ItemManager itemManager => manager.itemManager;
+    internal Item item => manager.item;
 }

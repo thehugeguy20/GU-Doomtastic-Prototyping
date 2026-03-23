@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class PullBack : ObjectState
+public class PullBack : ItemState
 {
     //private float charge = 0.22f;
 
-    public override void Enter(ObjectState _lastState)
+    public override void Enter(ItemState _lastState)
     {
         animator.CrossFadeInFixedTime(anim.name, 0.1f);
         startTime = Time.time;
@@ -12,16 +12,16 @@ public class PullBack : ObjectState
     public override void Do()
     {
 
-        if (itemManager.charge != float.NaN)
+        if (item.charge != float.NaN)
         {
-            itemManager.charge = Mathf.Clamp((float)itemManager.charge + time/150, 0, 1);
+            item.charge = Mathf.Clamp((float)item.charge + time/150, 0, 1);
         }
     
         if (time >= anim.length)
         {
             if (manager.pendingState != null)
             {
-                ObjectState nextState = manager.pendingState;
+                ItemState nextState = manager.pendingState;
                 manager.pendingState = null;
                 manager.state.ChangeState(nextState);
             }
@@ -35,7 +35,7 @@ public class PullBack : ObjectState
     {
         
     }
-    public override void Exit(ObjectState _nextState)
+    public override void Exit(ItemState _nextState)
     {
 
     }

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class IdleSword : ObjectState
+public class IdleSword : ItemState
 {
-    public override void Enter(ObjectState _lastState)
+    public override void Enter(ItemState _lastState)
     {
         
     }
@@ -14,7 +14,7 @@ public class IdleSword : ObjectState
     {
         
     }
-    public override void Exit(ObjectState _nextState)
+    public override void Exit(ItemState _nextState)
     {
 
     }

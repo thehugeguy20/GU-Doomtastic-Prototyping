@@ -1,25 +1,25 @@
 using UnityEngine;
 
-public class Hold : ObjectState
+public class Hold : ItemState
 {
 
-    public override void Enter(ObjectState _lastState)
+    public override void Enter(ItemState _lastState)
     {
         animator.CrossFadeInFixedTime(anim.name, 0.1f);
         startTime = Time.time;
     }
     public override void Do()
     {
-        if (itemManager.charge != float.NaN)
+        if (item.charge != float.NaN)
         {
-            itemManager.charge = Mathf.Clamp((float)itemManager.charge + time/150, 0, 1);
+            item.charge = Mathf.Clamp((float)item.charge + time/150, 0, 1);
         }
     }
     public override void FixedDo()
     {
         
     }
-    public override void Exit(ObjectState _nextState)
+    public override void Exit(ItemState _nextState)
     {
         if (_nextState.name == "Swing")
         {

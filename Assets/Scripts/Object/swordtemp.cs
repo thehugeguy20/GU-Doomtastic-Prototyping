@@ -1,16 +1,12 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class swordtemp : Abilities
 {
-    [SerializeField] protected ObjectStateManager manager;
+    [SerializeField] protected ItemStateManager manager;
     [SerializeField] private GameObject sword;
     [SerializeField] private GameObject parent;
-
-    void Start()
-    {
-        // sword.GetComponentInChildren<DependencyHandler>().DependencyInjection(parent);
-    }
 
     void Update()
     {

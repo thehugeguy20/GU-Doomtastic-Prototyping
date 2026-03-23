@@ -7,7 +7,7 @@ public class Billboard : MonoBehaviour
     public enum BillboardType {LookAtCamera, CameraForward};
     
 
-    void LateUpdate()
+    void Update()
     {
         switch (billboardType)
         {

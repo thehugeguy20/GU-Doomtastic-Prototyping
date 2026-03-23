@@ -1,0 +1,7 @@
+OVDF v1.1
+ItemDataScriptableObject, Assembly-CSharp
+MetaGuid:dfc622aa94f8b478fb20913f701fa49f
+
+# durability
++ [Sirenix.OdinInspector.HideIfAttribute]
+	Condition = ""

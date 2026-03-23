@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectStateManager : StateManager<ObjectStateManager, ObjectState>, IHasDependencies
+public class ItemStateManager : StateManager<ItemStateManager, ItemState>, IHasDependencies
 {
-    public ItemDataScriptableObject itemData;
-
-    [SerializeField] internal ItemManager itemManager;
+    [SerializeField] internal Item item;
 
     internal GameObject host {get; private set;}
 

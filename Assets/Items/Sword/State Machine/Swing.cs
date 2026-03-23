@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Swing : ObjectState
+public class Swing : ItemState
 {
     private bool hit = false;
     [SerializeField] private RayCaster rayCaster;
@@ -11,7 +11,7 @@ public class Swing : ObjectState
     [SerializeField] private float hitStopLength;
 
 
-    public override void Enter(ObjectState _lastState)
+    public override void Enter(ItemState _lastState)
     {
         animator.CrossFadeInFixedTime(anim.name, 0.1f);
         startTime = Time.time;
@@ -31,11 +31,11 @@ public class Swing : ObjectState
                     iinteractable.Interact(this.gameObject);
                 }
 
-                if(hitInfo.collider.gameObject.TryGetComponent(out IKnockbackable knockbackable) && itemManager.charge != float.NaN)
+                if(hitInfo.collider.gameObject.TryGetComponent(out IKnockbackable knockbackable) && item.charge != float.NaN)
                 {
                     Debug.Log("has knockbackable, Charge found in properties");
 
-                    Vector3 force = manager.itemData.GetKnockbackStrength(hitInfo.collider.gameObject.transform.parent.GetComponentInChildren<Billboard>().gameObject.transform.forward, itemManager.charge);
+                    Vector3 force = manager.item.base_.GetKnockbackStrength(hitInfo.collider.gameObject.transform.parent.GetComponentInChildren<Billboard>().gameObject.transform.forward, item.charge);
 
                     knockbackable.GetKnockedBack(force);
                 }
@@ -59,12 +59,12 @@ public class Swing : ObjectState
     {
         
     }
-    public override void Exit(ObjectState _nextState)
+    public override void Exit(ItemState _nextState)
     {
         hit = false;
-        if (itemManager.charge != float.NaN)
+        if (item.charge != float.NaN)
         {
-            itemManager.charge = 0f; 
+            item.charge = 0f; 
         }
     }
 }

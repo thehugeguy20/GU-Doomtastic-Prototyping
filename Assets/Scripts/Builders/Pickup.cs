@@ -10,17 +10,23 @@ public class Pickup : MonoBehaviour, IInteractable
     [SerializeField] private CapsuleCollider col;
     public GameObject holder;
 
+    internal ItemInit itemInit => GetComponentInParent<ItemInit>();
+    internal Item item => itemInit.item;
+
     public void Interact(GameObject interactor)
     {
+        Debug.Log("interactor: " + interactor.name);
         
-        parent.GetComponentInChildren<RayCaster>().rayOrigin = holder.GetComponentInChildren<Camera>().transform;
+        if (interactor.TryGetComponent(out Inventory inventory))
+        {
 
-        billboard.enabled = false;
-        col.enabled = false;
-        parent.transform.SetParent(interactor.transform);
-        parent.transform.localPosition = myPrefab.localPosition;
-        parent.transform.localRotation = myPrefab.localRotation;
-        parent.transform.localScale = myPrefab.localScale;
+            if (!inventory.Add(item))
+            {
+                Debug.Log("inventory full");
+                return;
+            }
 
+            Destroy(itemInit.gameObject);
+        }
     }
 }
