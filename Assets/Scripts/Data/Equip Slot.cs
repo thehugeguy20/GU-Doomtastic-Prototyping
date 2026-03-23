@@ -29,21 +29,7 @@ public class EquipSlot : MonoBehaviour
 
         currentObject.GetComponentInChildren<Billboard>().enabled = false;
 
-        Debug.Log("After instantiate: " + currentObject.transform.localRotation.eulerAngles);
-
-        Debug.Log("After parent set: " + currentObject.transform.localRotation.eulerAngles);
-        
         Animator animator = currentObject.GetComponentInChildren<Animator>();
-    
-        // if(this.name == "Right Hand")
-        // {
-        //     currentObject.transform.SetLocalPositionAndRotation(Vector3.zero, item.base_.prefab.transform.localRotation);
-        // }
-        // else if (this.name == "Left Hand")
-        // {
-        //     currentObject.transform.SetLocalPositionAndRotation(Vector3.zero, item.base_.prefab.transform.localRotation);
-        // }
-
         Pickup pickup = currentObject.GetComponentInChildren<Pickup>();
         if (pickup != null)
         {
@@ -58,13 +44,17 @@ public class EquipSlot : MonoBehaviour
             manager.EnterDefaultState();
         }
 
-        Debug.Log("After EnterDefaultState: " + currentObject.transform.localRotation.eulerAngles);
+        ItemInit init = slot.GetComponentInChildren<ItemInit>();
+        
+        init.deps = new()
+        {
+            ownerTransform = transform.parent,
+            camera = transform.parent.GetComponentInChildren<Camera>()
+        };
+        init.InjectDependents();
 
-        currentObject.transform.SetLocalPositionAndRotation(Vector3.zero, item.base_.prefab.transform.localRotation);
 
-        Debug.Log("what are you:" + item.base_.prefab.transform.localRotation.eulerAngles);
-
-        Debug.Log("Final rotation: " + currentObject.transform.localRotation.eulerAngles);
+        // currentObject.transform.SetLocalPositionAndRotation(Vector3.zero, item.base_.prefab.transform.localRotation);
     }
 
     public Item Unequip(bool dropItem)

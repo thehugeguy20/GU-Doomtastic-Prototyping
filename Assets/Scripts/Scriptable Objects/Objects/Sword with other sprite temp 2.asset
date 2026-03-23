@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfc622aa94f8b478fb20913f701fa49f, type: 3}
-  m_Name: Sword Data with other sprite Temp
+  m_Name: Sword with other sprite temp 2
   m_EditorClassIdentifier: Assembly-CSharp::ItemDataScriptableObject
-  prefab: {fileID: 2059709205328724615, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
+  prefab: {fileID: 2059709205328724615, guid: 6d0079eaa31734bd4ae8c3a047c31b00, type: 3}
   animController: {fileID: 9100000, guid: d9ca9aa1a26e448918c5cafa6206217f, type: 2}
   mirroredAnimController: {fileID: 9100000, guid: d9ca9aa1a26e448918c5cafa6206217f, type: 2}
-  damage: 5
+  damage: 3
   attackRange: 3
-  KnockbackStrength: 50
+  KnockbackStrength: 5
   damageType: 1
   isTwoHanded: 0
   ChargeMultiplier:

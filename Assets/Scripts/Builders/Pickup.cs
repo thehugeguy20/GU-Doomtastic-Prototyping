@@ -5,11 +5,6 @@ public class Pickup : MonoBehaviour, IInteractable
 {
     public Transform myPrefab;
 
-    [SerializeField] private GameObject parent;
-    [SerializeField] private Billboard billboard;
-    [SerializeField] private CapsuleCollider col;
-    public GameObject holder;
-
     internal ItemInit itemInit => GetComponentInParent<ItemInit>();
     internal Item item => itemInit.item;
 

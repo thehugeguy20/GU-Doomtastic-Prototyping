@@ -7,7 +7,7 @@ public abstract class DependencyHandler : MonoBehaviour
 
     [SerializeField] protected GameObject host;
 
-    protected Dependencies deps;
+    internal Dependencies deps;
 
     public void InjectDependents()
     {

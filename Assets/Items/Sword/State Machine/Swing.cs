@@ -7,7 +7,6 @@ public class Swing : ItemState
 {
     private bool hit = false;
     [SerializeField] private RayCaster rayCaster;
-    public GameObject waterspawn;
     [SerializeField] private float hitStopLength;
 
 

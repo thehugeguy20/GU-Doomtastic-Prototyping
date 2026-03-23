@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private RayCaster rayCaster;
-    [SerializeField] private GameObject rightHand;
-    [SerializeField] private GameObject player;
     [SerializeField] private Inventory inventory;
     [SerializeField] private Equipment equipment;
 

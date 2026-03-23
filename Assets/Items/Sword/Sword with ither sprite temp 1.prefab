@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 2984187335687318022}
   - component: {fileID: 7228586664948052414}
   m_Layer: 0
-  m_Name: Sword
+  m_Name: Sword with ither sprite temp 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   host: {fileID: 2059709205328724615}
   item:
     name: Sword
-    base_: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
+    base_: {fileID: 11400000, guid: 1fbf844f4cd1340008e4820bb807a8ea, type: 2}
     damageType: 1
     durability: NaN
     charge: NaN
@@ -250,6 +250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   myPrefab: {fileID: 5271115728073418253}
+  parent: {fileID: 2059709205328724615}
+  billboard: {fileID: 7228586664948052414}
+  col: {fileID: 3774503724771652310}
+  holder: {fileID: 0}
 --- !u!1 &4169390975333384051
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +461,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 4d56af4782412472ea2e1e355ce37736, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89f46326cc88144b6837a14ad3727a19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -563,6 +567,7 @@ MonoBehaviour:
   animator: {fileID: 6051589344956517590}
   anim: {fileID: 7400000, guid: d0d5920e54653477f953184aeb6dbfea, type: 2}
   rayCaster: {fileID: 476838560607949722}
+  waterspawn: {fileID: 1960327731796735083, guid: a80aece3e2826430bb4cd65709fc718a, type: 3}
   hitStopLength: 0.04
 --- !u!114 &476838560607949722
 MonoBehaviour:
@@ -577,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Finder
   findType: 0
-  fromWhere: 0
+  fromWhere: 2
   distance: 5
   sphereRadius: 0.1
   rayOrigin: {fileID: 0}

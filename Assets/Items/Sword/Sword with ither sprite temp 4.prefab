@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 2984187335687318022}
   - component: {fileID: 7228586664948052414}
   m_Layer: 0
-  m_Name: Sword with other sprite Temp
+  m_Name: Sword with ither sprite temp 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   host: {fileID: 2059709205328724615}
   item:
     name: Sword
-    base_: {fileID: 11400000, guid: 26585fdbf674c46cfa4a4cdb19628f27, type: 2}
+    base_: {fileID: 11400000, guid: dd0cd0f5f9acc418facee68c2ebff73c, type: 2}
     damageType: 1
     durability: NaN
     charge: NaN
