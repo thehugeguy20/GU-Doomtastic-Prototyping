@@ -22,8 +22,6 @@ public class RayCaster : MonoBehaviour, IHasDependencies
 
     public void SetDependencies(Dependencies deps)
     {
-        Debug.Log("RAYCASTER SETTING DEPENDENCIES MY PARENT IS" + this.name);
-
         if (fromWhere == FromWhere.Camera && deps.camera != null)
         {
             rayOrigin = deps.camera.transform;
@@ -36,8 +34,6 @@ public class RayCaster : MonoBehaviour, IHasDependencies
         {
             rayOrigin = this.transform;
         }
-
-        Debug.Log("NOW RAYORIGIN IS " + rayOrigin.name);
     }
 
     public RaycastHit Cast()

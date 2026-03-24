@@ -27,7 +27,11 @@ public class EquipSlot : MonoBehaviour
             slot
         );
 
-        currentObject.GetComponentInChildren<Billboard>().enabled = false;
+        Billboard billboard = currentObject.GetComponentInChildren<Billboard>();
+        if (billboard != null)
+        {
+	        billboard.enabled = false;
+	    }
 
         Animator animator = currentObject.GetComponentInChildren<Animator>();
         Pickup pickup = currentObject.GetComponentInChildren<Pickup>();
@@ -53,8 +57,6 @@ public class EquipSlot : MonoBehaviour
         };
         init.InjectDependents();
 
-
-        // currentObject.transform.SetLocalPositionAndRotation(Vector3.zero, item.base_.prefab.transform.localRotation);
     }
 
     public Item Unequip(bool dropItem)
@@ -67,7 +69,12 @@ public class EquipSlot : MonoBehaviour
         if(dropItem == true)
         {
             currentObject.transform.SetParent(null);
-            currentObject.GetComponentInChildren<Billboard>().enabled = true;
+
+            Billboard billboard = currentObject.GetComponentInChildren<Billboard>();
+            if (billboard != null)
+            {
+                billboard.enabled = true;
+            }
 
             Pickup pickup = currentObject.GetComponentInChildren<Pickup>();
 
