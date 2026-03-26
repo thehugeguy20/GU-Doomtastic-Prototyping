@@ -1,14 +1,13 @@
 using CameraShake;
-using NUnit.Framework;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Swing : ItemState
 {
     private bool hit = false;
-    [SerializeField] private RayCaster rayCaster;
     [SerializeField] private float hitStopLength;
 
+    RayCaster rayCaster => transform.root.GetComponentInChildren<RayCaster>();
 
     public override void Enter(ItemState _lastState)
     {
@@ -18,7 +17,7 @@ public class Swing : ItemState
     public override void Do()
     {
 
-        if(hit == false && time >= anim.length-anim.length/3)
+        if(hit == false && time >= anim.length-anim.length/3 && rayCaster != null)
         {
             
             RaycastHit hitInfo = rayCaster.Cast();
@@ -34,7 +33,17 @@ public class Swing : ItemState
                 {
                     Debug.Log("has knockbackable, Charge found in properties");
 
-                    Vector3 force = manager.item.base_.GetKnockbackStrength(hitInfo.collider.gameObject.transform.parent.GetComponentInChildren<Billboard>().gameObject.transform.forward, item.charge);
+                    Vector3 billboardForward = hitInfo.collider.transform.parent.GetComponentInChildren<Billboard>().transform.forward;
+
+                    Item debugItem = manager.item;
+
+                    GameObject debugBase = item.Base.prefab;
+
+                    float debugCharge = item.charge;
+
+                    float debugsum = 3 + item.charge;
+
+                    Vector3 force = manager.item.GetKnockbackStrength(billboardForward, item.charge);
 
                     knockbackable.GetKnockedBack(force);
                 }

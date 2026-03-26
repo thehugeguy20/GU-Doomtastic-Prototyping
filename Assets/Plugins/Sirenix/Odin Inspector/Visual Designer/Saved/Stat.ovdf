@@ -1,0 +1,14 @@
+OVDF v1.1
+Stat, Assembly-CSharp
+
+# $JnXax3nQa6oDjgYg5WkmKC
+Position: $root:5
++ [Sirenix.OdinInspector.VerticalGroupAttribute]
+
+# flats
+Position: $JnXax3nQa6oDjgYg5WkmKC:0
++ [Sirenix.OdinInspector.ListDrawerSettingsAttribute]
+	ShowFoldout = False
+
+# additives
+Position: $JnXax3nQa6oDjgYg5WkmKC:1

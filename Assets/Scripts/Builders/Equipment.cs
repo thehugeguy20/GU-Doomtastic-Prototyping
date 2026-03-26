@@ -5,7 +5,6 @@ public class Equipment : MonoBehaviour
     [SerializeField] private Inventory inventory;
     [SerializeField] internal EquipSlot rightHand;
     [SerializeField] internal EquipSlot leftHand;
-    [SerializeField] private PlayerInit playerInit;
 
     public void EquipRightHand(Item item)
     {
@@ -15,20 +14,19 @@ public class Equipment : MonoBehaviour
         {
             inventory.Add(lastEquippedItem);
 
-            if (lastEquippedItem.base_.isTwoHanded == true)
+            if (lastEquippedItem.isTwoHanded == true)
             {
                 leftHand.IsEnabled(true);
             }
         }
 
-        if (item.base_.isTwoHanded == true)
+        if (item.isTwoHanded == true)
         {
             leftHand.IsEnabled(false);
         }
 
         inventory.Remove(item);
         rightHand.Equip(item);
-        playerInit.InjectDependents();
     }
 
     public void EquipLeftHand(Item item)
@@ -42,7 +40,6 @@ public class Equipment : MonoBehaviour
 
         inventory.Remove(item);
         leftHand.Equip(item);
-        playerInit.InjectDependents();
     }
 
     public void UnequipRightHand()
@@ -54,7 +51,7 @@ public class Equipment : MonoBehaviour
             return;
         }
 
-        if (lastEquippedItem.base_.isTwoHanded == true)
+        if (lastEquippedItem.isTwoHanded == true)
         {
             leftHand.IsEnabled(true);
         }

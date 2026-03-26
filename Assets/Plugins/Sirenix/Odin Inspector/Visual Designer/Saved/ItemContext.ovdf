@@ -1,0 +1,34 @@
+OVDF v1.1
+ItemContext, Assembly-CSharp
+MetaGuid:70880683844bc4c0c8cce629bdc14e25
+
+# $9uVrgTkRvGyg1hNDhWxUFv
+Position: $root
++ [Sirenix.OdinInspector.TitleGroupAttribute]
+	GroupName = "Base Stats"
+	Subtitle = "These are the base stats for this item. Go nuts! But be aware you're changing an actual file. A \"Scriptable Object\"."
+	VisibleIf = ""
+	BoldTitle = True
+	Indent = False
+	HorizontalLine = True
+
+# $SGwiPfPHB8ehwgLL7CpcC1
+Position: $root
++ [Sirenix.OdinInspector.TitleGroupAttribute]
+	Subtitle = "These are the generated stats for the item at runtime. Things will most likely break if you touch any of these"
+	GroupName = "Runtime Stats"
+	Indent = False
+	BoldTitle = True
+
+# _base
+Position: $9uVrgTkRvGyg1hNDhWxUFv:0
++ [Sirenix.OdinInspector.TypeInfoBoxAttribute]
+	Message = "This slot is for a sciptable object, something that contains preset stats, which we're using for the base stats of each weapon type. Go nuts! But be aware you're changing the actual file itself."
++ [Sirenix.OdinInspector.InlineEditorAttribute]
+	PreviewAlignment = Left
+	ObjectFieldMode = Boxed
+	DrawPreview = True
+	DrawHeader = True
+
+# item
+Position: $SGwiPfPHB8ehwgLL7CpcC1:0

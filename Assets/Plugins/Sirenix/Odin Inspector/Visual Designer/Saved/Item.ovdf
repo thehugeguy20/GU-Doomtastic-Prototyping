@@ -1,0 +1,52 @@
+OVDF v1.1
+Item, Assembly-CSharp
+
+# base_
++ [Sirenix.OdinInspector.InlineEditorAttribute]
+	DrawPreview = False
+	expanded = True
+	ExpandedHasValue = True
+	PreviewAlignment = Left
+	ObjectFieldMode = Boxed
+
+# title
+Visibility: Shown
+
+# Base
+Visibility: Shown
++ [Sirenix.OdinInspector.ReadOnlyAttribute]
+
+# prefab
+Visibility: Shown
++ [Sirenix.OdinInspector.ReadOnlyAttribute]
+
+# attackRange
+Visibility: Shown
+
+# knockbackStrength
+Visibility: Shown
+
+# damage
+Visibility: Shown
+
+# <isTwoHanded>k__BackingField
+Visibility: Shown
+
+# <chargeMultiplier>k__BackingField
+Visibility: Shown
+
+# statGen
+Visibility: Hidden
++ [Sirenix.OdinInspector.ReadOnlyAttribute]
+
+# isTwoHanded
+Visibility: Hidden
+
+# chargeMultiplier
+Visibility: Hidden
+
+# GetKnockbackStrength(Vector3, float)
+Visibility: Hidden
+
+# baseName
+Visibility: Hidden

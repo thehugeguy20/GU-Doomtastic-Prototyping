@@ -1,12 +1,17 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour, IInteractable
 {
     public Transform myPrefab;
 
-    internal ItemInit itemInit => GetComponentInParent<ItemInit>();
-    internal Item item => itemInit.item;
+    internal ItemContext itemContext => GetComponentInParent<ItemContext>();
+
+    internal Item item => itemContext.item;
+
+    internal GameObject parent => itemContext.gameObject;
+
 
     public void Interact(GameObject interactor)
     {
@@ -14,6 +19,7 @@ public class Pickup : MonoBehaviour, IInteractable
         
         if (interactor.TryGetComponent(out Inventory inventory))
         {
+            Debug.Log("inventory!");
 
             if (!inventory.Add(item))
             {
@@ -21,7 +27,11 @@ public class Pickup : MonoBehaviour, IInteractable
                 return;
             }
 
-            Destroy(itemInit.gameObject);
+            Destroy(parent);
+        }
+        else
+        {
+            Debug.Log("no inventory?");
         }
     }
 }

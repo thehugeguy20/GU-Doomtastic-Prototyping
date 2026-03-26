@@ -3,5 +3,5 @@ using UnityEngine;
 
 public class ItemStateManager : StateManager<ItemStateManager, ItemState>
 {
-    [SerializeField] internal Item item;
+    internal Item item => GetComponentInParent<ItemContext>().item;
 }

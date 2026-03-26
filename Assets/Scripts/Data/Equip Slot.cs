@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -19,44 +20,38 @@ public class EquipSlot : MonoBehaviour
         }
 
         currentItem = item;
-
+        
         currentObject = Instantiate(
-            item.base_.prefab,
+            item.prefab,
             slot.position,
             slot.rotation,
             slot
         );
 
-        Billboard billboard = currentObject.GetComponentInChildren<Billboard>();
-        if (billboard != null)
-        {
-	        billboard.enabled = false;
-	    }
-
-        Animator animator = currentObject.GetComponentInChildren<Animator>();
-        Pickup pickup = currentObject.GetComponentInChildren<Pickup>();
-        if (pickup != null)
-        {
-            pickup.enabled = false;
-            pickup.GetComponent<Collider>().enabled = false;
-        }
-
-        ItemStateManager manager = currentObject.GetComponentInChildren<ItemStateManager>();
-        if (manager != null)
-        {
-            manager.item = item;
-            manager.EnterDefaultState();
-        }
-
-        ItemInit init = slot.GetComponentInChildren<ItemInit>();
         
-        init.deps = new()
+        if (currentObject.TryGetComponent<ItemContext>(out ItemContext itemContext))
         {
-            ownerTransform = transform.parent,
-            camera = transform.parent.GetComponentInChildren<Camera>()
-        };
-        init.InjectDependents();
+            itemContext.item = item;
 
+            Billboard billboard = itemContext.billboard;
+            if (billboard != null)
+            {
+                billboard.enabled = false;
+            }
+
+            Pickup pickup = itemContext.pickup;
+            if (pickup != null)
+            {
+                pickup.enabled = false;
+                pickup.GetComponent<Collider>().enabled = false;
+            }
+
+            ItemStateManager manager = itemContext.manager;
+            if (manager != null)
+            {
+                manager.EnterDefaultState();
+            }
+        }
     }
 
     public Item Unequip(bool dropItem)
@@ -70,18 +65,20 @@ public class EquipSlot : MonoBehaviour
         {
             currentObject.transform.SetParent(null);
 
-            Billboard billboard = currentObject.GetComponentInChildren<Billboard>();
-            if (billboard != null)
+            if (currentObject.TryGetComponent<ItemContext>(out ItemContext itemContext))
             {
-                billboard.enabled = true;
-            }
+                Billboard billboard = itemContext.billboard;
+                if (billboard != null)
+                {
+                    billboard.enabled = true;
+                }
 
-            Pickup pickup = currentObject.GetComponentInChildren<Pickup>();
-
-            if (pickup != null)
-            {
-                pickup.enabled = true;
-                pickup.GetComponent<Collider>().enabled = true;
+                Pickup pickup = itemContext.pickup;
+                if (pickup != null)
+                {
+                    pickup.enabled = true;
+                    pickup.GetComponent<Collider>().enabled = true;
+                }
             }
         }
         else

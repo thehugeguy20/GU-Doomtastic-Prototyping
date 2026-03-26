@@ -14,22 +14,8 @@ public class Attributes
         Null, Normal, Large, Small, Huge, Tiny
     }
 
-    public enum Modifier
+    public enum Effect
     {
-        Null, Normal, Poison, Fire, Ice
+        Normal, Toxic, Cold, Shredding, Strong, Blinding
     }
-
-
-    public Ai ai;
-    public Physical physical;
-    public Modifier modifier;
-    public Attribute attribute;
-
-    public Attributes(Ai _ai, Physical _physical, Modifier _modifier)
-    {
-        this.ai = _ai;
-        this.physical = _physical;
-        this.modifier = _modifier;
-    }
-
 }

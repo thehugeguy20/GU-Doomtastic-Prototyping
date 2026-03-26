@@ -11,7 +11,7 @@ public class TakesDamage : MonoBehaviour, IInteractable, IKnockbackable
 
     public void Interact(GameObject interactor)
     {
-        manager.state.ChangeState(manager.FindState("Hurt"));
+        manager.state.ChangeState(manager.FindState("SpiderHurt"));
     }
 
     public void GetKnockedBack(Vector3 force)

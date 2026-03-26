@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -18,11 +17,6 @@ public struct Dependencies
 
     //wherever the camera may be - limited to only if the camera is within the same tree, whether higher or deeper
     public Camera camera;
-}
-
-public interface IHasDependencies
-{
-    void SetDependencies(Dependencies deps);
 }
 
 public interface IInteractable

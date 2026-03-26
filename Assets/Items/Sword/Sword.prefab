@@ -55,12 +55,6 @@ MonoBehaviour:
   - {fileID: 2906373871176032412}
   - {fileID: 4006126889311370548}
   - {fileID: 8765389843332267625}
-  item:
-    name: 
-    base_: {fileID: 0}
-    damageType: 0
-    durability: 0
-    charge: 0
 --- !u!1 &2059709205328724615
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +64,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5271115728073418253}
-  - component: {fileID: 6053706908767912919}
+  - component: {fileID: 4387990108669887799}
   - component: {fileID: 6051589344956517590}
   - component: {fileID: 2984187335687318022}
   - component: {fileID: 7228586664948052414}
@@ -99,7 +93,7 @@ Transform:
   - {fileID: 7004665163199373642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -15, y: -98.1, z: 58.6}
---- !u!114 &6053706908767912919
+--- !u!114 &4387990108669887799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,25 +102,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2059709205328724615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e52022568f74cf3a048cf4448a6ad8, type: 3}
+  m_Script: {fileID: 11500000, guid: 70880683844bc4c0c8cce629bdc14e25, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  parts:
-  - {fileID: 2059709205328724615}
-  - {fileID: 2641338225645496935}
-  - {fileID: 4169390975333384051}
-  - {fileID: 6129785133392817828}
-  - {fileID: 1979954428293339954}
-  - {fileID: 7197820454805951146}
-  - {fileID: 6083421257124987445}
-  - {fileID: 4673487771006965018}
-  - {fileID: 7490417204305705367}
-  host: {fileID: 2059709205328724615}
+  m_EditorClassIdentifier: Assembly-CSharp::ItemContext
+  _base: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
   item:
-    name: Sword
-    base_: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
-    damageType: 1
-    durability: NaN
+    title: 
+    Base: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
+    durability:
+      isEnabled: 1
+      baseValue: 1
     charge: NaN
 --- !u!95 &6051589344956517590
 Animator:
@@ -524,7 +509,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9003001110624001614}
   - component: {fileID: 8765389843332267625}
-  - component: {fileID: 476838560607949722}
   m_Layer: 0
   m_Name: Swing
   m_TagString: Untagged
@@ -562,22 +546,4 @@ MonoBehaviour:
   manager: {fileID: 3744990370883484796}
   animator: {fileID: 6051589344956517590}
   anim: {fileID: 7400000, guid: d0d5920e54653477f953184aeb6dbfea, type: 2}
-  rayCaster: {fileID: 476838560607949722}
   hitStopLength: 0.04
---- !u!114 &476838560607949722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490417204305705367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e683effdce1543ffbb64753ba7995b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Finder
-  findType: 0
-  fromWhere: 0
-  distance: 5
-  sphereRadius: 0.1
-  rayOrigin: {fileID: 0}

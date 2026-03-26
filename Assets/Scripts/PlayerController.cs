@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private RayCaster rayCaster;
     [SerializeField] private Inventory inventory;
     [SerializeField] private Equipment equipment;
+    [SerializeField] private ItemDataScriptableObject swordData;
 
     void Update()
     {
@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
 
             if(hitInfo.collider.gameObject.TryGetComponent<Pickup>(out Pickup pickup))
             {
-
                 pickup.Interact(this.gameObject);
 
                 if (equipment.rightHand.isEmpty)
@@ -48,6 +47,11 @@ public class PlayerController : MonoBehaviour
             {
                 equipment.SwapHands();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Item item = new(swordData);
         }
     }
 }

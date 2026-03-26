@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
             {
                 for (int i = 0; i < _items.Length; i++)
                 {
-                    if (_items[i] == null)
+                    if (_items[i].Base == null)
                     {
                         _items[i] = new Item(null);
                     }
@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i].base_ == null)
+            if (items[i].Base == null)
             {
                 items[i] = item;
                 return true;
@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = items.Length - 1; i >= 0; i--)
         {
-            if (items[i].base_ != null)
+            if (items[i].Base != null)
             {
                 return items[i];
             }
@@ -93,7 +93,7 @@ public class Inventory : MonoBehaviour
     {
         foreach(Item item in items)
         {
-            if (item.base_ == null)
+            if (item.Base == null)
             {
                 return false;
             }

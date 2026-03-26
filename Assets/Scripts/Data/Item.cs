@@ -5,32 +5,64 @@ using Sirenix.OdinInspector;
 [Serializable]
 public class Item
 {
-    public string name;
+    private string baseName;
+    public string title;
 
     [OnValueChanged("AddItemDataSO")]
-    public ItemDataScriptableObject base_;
+    internal ItemDataScriptableObject Base;
+    internal GameObject prefab;
 
-    public Attributes.Modifier damageType;
+    internal Stat attackRange;
+    internal Stat knockbackStrength;
+    internal Stat damage;
 
-    [HideIf("durability", float.NaN)]
-    public float durability;
+    internal bool isTwoHanded {get; private set;}
+    internal AnimationCurve chargeMultiplier {get; private set;}
+
+    private WeaponStatGenerator statGen = new();
+
+    internal Effect prefix;
+    internal Effect suffix;
+
+    //OPTIONAL VALUES
+    [HideIf("durability", null)]
+    public Stat durability;
     [HideIf("charge", float.NaN)]
     public float charge;
+    [HideIf("effect.affliction", Attributes.Effect.Normal)]
+    public Effect effect;
 
-    public Item(ItemDataScriptableObject base_)
+    public Item(ItemDataScriptableObject _base)
     {
-        this.base_ = base_;
+        this.Base = _base;
 
-        if (base_ != null)
+        prefix = statGen.GeneratePrefix();
+        suffix = statGen.GenerateSuffix();
+
+        if (_base != null)
         {
             AddItemDataSO();
         }
+
+        title = $"{prefix.affixName} {suffix.affixName} {baseName}";
+
     }
+
+    public Vector3 GetKnockbackStrength(Vector3 direction, float charge)
+    {
+        return knockbackStrength.total * chargeMultiplier.Evaluate(charge) * direction;
+    } 
 
     private void AddItemDataSO()
     {
-        durability = base_.durability;
-        charge = base_.charge;
-        damageType = base_.damageType;
+        attackRange = Base.attackRange;
+        knockbackStrength = Base.KnockbackStrength;
+        damage = Base.damage;
+        isTwoHanded = Base.isTwoHanded;
+        chargeMultiplier = Base.ChargeMultiplier;
+        durability = Base.durability;
+        isTwoHanded = Base.isTwoHanded;
+        baseName = Base.name;
+        prefab = Base.prefab;
     }
 }
