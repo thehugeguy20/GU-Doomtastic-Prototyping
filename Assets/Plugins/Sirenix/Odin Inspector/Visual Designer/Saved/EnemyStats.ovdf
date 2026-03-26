@@ -1,0 +1,17 @@
+OVDF v1.1
+EnemyStats, Assembly-CSharp
+
+# defense
+Visibility: Shown
++ [Sirenix.OdinInspector.HideInEditorModeAttribute]
++ [Sirenix.OdinInspector.ReadOnlyAttribute]
+
+# health
+Visibility: Shown
++ [Sirenix.OdinInspector.HideInEditorModeAttribute]
++ [Sirenix.OdinInspector.ReadOnlyAttribute]
+
+# speed
+Visibility: Shown
++ [Sirenix.OdinInspector.HideInEditorModeAttribute]
++ [Sirenix.OdinInspector.ReadOnlyAttribute]

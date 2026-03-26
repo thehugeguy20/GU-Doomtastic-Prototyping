@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hitInfo = rayCaster.Cast();
+            RaycastHit hitInfo = rayCaster.Cast(RayCaster.FindType.LineForward);
 
             if(hitInfo.collider.gameObject.TryGetComponent<Pickup>(out Pickup pickup))
             {

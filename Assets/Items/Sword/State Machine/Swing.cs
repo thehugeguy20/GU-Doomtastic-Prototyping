@@ -19,14 +19,13 @@ public class Swing : ItemState
 
         if(hit == false && time >= anim.length-anim.length/3 && rayCaster != null)
         {
-            
-            RaycastHit hitInfo = rayCaster.Cast();
+            RaycastHit hitInfo = rayCaster.Cast(RayCaster.FindType.LineForward);
 
             if(hitInfo.collider != null)
             {
-                foreach (IInteractable iinteractable in hitInfo.collider.gameObject.GetComponents<IInteractable>())
+                foreach (ITakeDamage damagee in hitInfo.collider.gameObject.GetComponents<ITakeDamage>())
                 {
-                    iinteractable.Interact(this.gameObject);
+                    damagee.TakeDamage(manager.item);
                 }
 
                 if(hitInfo.collider.gameObject.TryGetComponent(out IKnockbackable knockbackable) && item.charge != float.NaN)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ItemContext : MonoBehaviour
+public class ItemCore : MonoBehaviour
 {
     [SerializeField] private ItemDataScriptableObject _base;
 
@@ -18,5 +18,4 @@ public class ItemContext : MonoBehaviour
     {
         item = new(_base);
     }
-
 }

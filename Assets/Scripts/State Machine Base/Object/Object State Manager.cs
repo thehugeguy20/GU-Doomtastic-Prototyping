@@ -3,5 +3,5 @@ using UnityEngine;
 
 public class ItemStateManager : StateManager<ItemStateManager, ItemState>
 {
-    internal Item item => GetComponentInParent<ItemContext>().item;
+    internal Item item => GetComponentInParent<ItemCore>().item;
 }

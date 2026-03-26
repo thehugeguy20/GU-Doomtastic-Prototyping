@@ -24,6 +24,11 @@ public interface IInteractable
     void Interact(GameObject interactor);
 }
 
+public interface ITakeDamage
+{
+    void TakeDamage(Item item);
+}
+
 public interface IKnockbackable
 {
     void GetKnockedBack(Vector3 force);

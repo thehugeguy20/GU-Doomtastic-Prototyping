@@ -2,16 +2,24 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TakesDamage : MonoBehaviour, IInteractable, IKnockbackable
+public class TakesDamage : MonoBehaviour, ITakeDamage, IKnockbackable
 {
     [SerializeField] protected EntityStateManager manager;
     [SerializeField] internal Rigidbody rig; 
     [SerializeField] private NavMeshAgent agent;
     [Range(0.001f, 0.1f)][SerializeField] private float stillTresh = 0.05f;
 
-    public void Interact(GameObject interactor)
+    public void TakeDamage(Item item)
     {
-        manager.state.ChangeState(manager.FindState("SpiderHurt"));
+        if (manager.stats.health.value - item.damage.total <= 0)
+        {
+            manager.state.ChangeState(manager.FindState("SpiderDeath"));
+        }
+        else
+        {
+            manager.stats.health.changes -= item.damage.total;
+            manager.state.ChangeState(manager.FindState("SpiderHurt"));
+        }
     }
 
     public void GetKnockedBack(Vector3 force)

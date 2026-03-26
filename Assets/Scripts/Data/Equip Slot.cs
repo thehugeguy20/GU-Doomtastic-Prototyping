@@ -29,24 +29,24 @@ public class EquipSlot : MonoBehaviour
         );
 
         
-        if (currentObject.TryGetComponent<ItemContext>(out ItemContext itemContext))
+        if (currentObject.TryGetComponent<ItemCore>(out ItemCore core))
         {
-            itemContext.item = item;
+            core.item = item;
 
-            Billboard billboard = itemContext.billboard;
+            Billboard billboard = core.billboard;
             if (billboard != null)
             {
                 billboard.enabled = false;
             }
 
-            Pickup pickup = itemContext.pickup;
+            Pickup pickup = core.pickup;
             if (pickup != null)
             {
                 pickup.enabled = false;
                 pickup.GetComponent<Collider>().enabled = false;
             }
 
-            ItemStateManager manager = itemContext.manager;
+            ItemStateManager manager = core.manager;
             if (manager != null)
             {
                 manager.EnterDefaultState();
@@ -65,15 +65,15 @@ public class EquipSlot : MonoBehaviour
         {
             currentObject.transform.SetParent(null);
 
-            if (currentObject.TryGetComponent<ItemContext>(out ItemContext itemContext))
+            if (currentObject.TryGetComponent<ItemCore>(out ItemCore core))
             {
-                Billboard billboard = itemContext.billboard;
+                Billboard billboard = core.billboard;
                 if (billboard != null)
                 {
                     billboard.enabled = true;
                 }
 
-                Pickup pickup = itemContext.pickup;
+                Pickup pickup = core.pickup;
                 if (pickup != null)
                 {
                     pickup.enabled = true;

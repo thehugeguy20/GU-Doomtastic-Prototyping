@@ -5,16 +5,11 @@ public class RayCaster : MonoBehaviour
 {
     public enum FindType { LineForward, SphereForward }
 
-    [SerializeField] private FindType findType = FindType.SphereForward;
-
     [SerializeField] private float distance;
-
-    [ShowIf("findType", FindType.SphereForward)]
-    [SerializeField] private float sphereRadius;
 
     private Transform camTransform => transform.root.GetComponentInChildren<Camera>().transform;
 
-    public RaycastHit Cast()
+    public RaycastHit Cast(FindType findType)
     {
         if (findType == FindType.LineForward)
         {

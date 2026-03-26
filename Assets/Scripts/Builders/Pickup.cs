@@ -6,11 +6,11 @@ public class Pickup : MonoBehaviour, IInteractable
 {
     public Transform myPrefab;
 
-    internal ItemContext itemContext => GetComponentInParent<ItemContext>();
+    internal ItemCore core => GetComponentInParent<ItemCore>();
 
-    internal Item item => itemContext.item;
+    internal Item item => core.item;
 
-    internal GameObject parent => itemContext.gameObject;
+    internal GameObject parent => core.gameObject;
 
 
     public void Interact(GameObject interactor)

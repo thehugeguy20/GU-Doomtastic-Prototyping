@@ -24,13 +24,13 @@ public struct Modifier
 
 public class FlatModifiers
 {
-    public List<Modifier> flatAdditions = new();
+    public List<Modifier> list = new();
 
     public float CalculateTotal(float baseValue)
     {
         float sumOfFlats = 0f;
 
-        foreach (Modifier mod in flatAdditions)
+        foreach (Modifier mod in list)
         {
             sumOfFlats += mod.value;
         }
@@ -41,13 +41,13 @@ public class FlatModifiers
 
 public class AdditiveModifiers
 {
-    public List<Modifier> additiveAdditions = new();
+    public List<Modifier> list = new();
 
     public float CalculateTotal(float baseValue)
     {
         float sumOfAdditives = 1f;
 
-        foreach (Modifier mod in additiveAdditions)
+        foreach (Modifier mod in list)
         {
             sumOfAdditives += mod.value;
         }
@@ -68,17 +68,28 @@ public class Stat
     public FlatModifiers flats = new();
     public AdditiveModifiers additives = new();
 
-    public float total =>  additives.CalculateTotal(flats.CalculateTotal(baseValue));
-    
+    public float total => additives.CalculateTotal(flats.CalculateTotal(baseValue));
+
+    public float changes;
+
+    public float value => total + changes;
+
+
     public Stat(bool _toggleable)
     {
         toggleable = _toggleable;
+    }
+
+    public Stat(bool _toggleable, float min, float max, float weight)
+    {
+        toggleable = _toggleable;
+        baseValue = UnityEngine.Random.Range(min, max) * weight;
     }
 }
 
 public abstract class Effect
 {
-    public abstract AffixKey affix { get; }
+    public abstract Affix affix { get; }
     public abstract string affixName { get; }
 
     public Stat amount;
@@ -101,7 +112,7 @@ public abstract class Effect
 
 public class Cold : Effect
 {
-    public override AffixKey affix { get => new(Prefix.Cold); }
+    public override Affix affix { get => new(Prefix.Cold); }
     public override string affixName { get => "Cold";}
 
     protected override float Generate(float difficulty)
@@ -112,7 +123,7 @@ public class Cold : Effect
 
 public class Toxic : Effect
 {
-    public override AffixKey affix { get => new(Prefix.Toxic); }
+    public override Affix affix { get => new(Prefix.Toxic); }
     public override string affixName { get => "Toxic";}
     
     protected override float Generate(float difficulty)
@@ -123,7 +134,7 @@ public class Toxic : Effect
 
 public class Shredding : Effect
 {
-    public override AffixKey affix { get => new(Prefix.Shredding); }
+    public override Affix affix { get => new(Prefix.Shredding); }
     public override string affixName { get => "Shredding";}
 
     protected override float Generate(float difficulty)
@@ -134,7 +145,7 @@ public class Shredding : Effect
 
 public class Powerful : Effect
 {
-    public override AffixKey affix { get => new(Suffix.Powerful); }
+    public override Affix affix { get => new(Suffix.Powerful); }
     public override string affixName { get => "Powerful";}
 
     protected override float Generate(float difficulty)
@@ -149,7 +160,7 @@ public class Powerful : Effect
 
 public class Disorienting : Effect
 {
-    public override AffixKey affix { get => new(Suffix.Disorienting); }
+    public override Affix affix { get => new(Suffix.Disorienting); }
     public override string affixName { get => "Disorienting";}
 
     protected override float Generate(float difficulty)
@@ -160,7 +171,7 @@ public class Disorienting : Effect
 
 public class Lovestruck : Effect
 {
-    public override AffixKey affix { get => new(Suffix.Lovestruck); }
+    public override Affix affix { get => new(Suffix.Lovestruck); }
     public override string affixName { get => "Lovestruck";}
 
     protected override float Generate(float difficulty)
@@ -171,7 +182,7 @@ public class Lovestruck : Effect
 
 public class Soft : Effect
 {
-    public override AffixKey affix { get => new(Suffix.Soft); }
+    public override Affix affix { get => new(Suffix.Soft); }
     public override string affixName { get => "Soft";}
 
     protected override float Generate(float difficulty)
@@ -182,7 +193,7 @@ public class Soft : Effect
 
 public class Healing : Effect
 {
-    public override AffixKey affix { get => new(Suffix.Healing); }
+    public override Affix affix { get => new(Suffix.Healing); }
     public override string affixName { get => "Healing";}
 
     protected override float Generate(float difficulty)
@@ -193,7 +204,7 @@ public class Healing : Effect
 
 public class Terrifying : Effect
 {
-    public override AffixKey affix { get => new(Suffix.Terrifying); }
+    public override Affix affix { get => new(Suffix.Terrifying); }
     public override string affixName { get => "Terrifying";}
 
     protected override float Generate(float difficulty)
@@ -220,7 +231,7 @@ public enum Suffix
 }
 
 
-public struct AffixKey
+public struct Affix
 {
     public enum AffixType 
     {
@@ -231,13 +242,13 @@ public struct AffixKey
     public AffixType type;
     public int value;
 
-    public AffixKey(Prefix prefix)
+    public Affix(Prefix prefix)
     {
         type = AffixType.Prefix;
         value = (int)prefix;
     }
 
-    public AffixKey(Suffix suffix)
+    public Affix(Suffix suffix)
     {
         type = AffixType.Suffix;
         value = (int)suffix;
@@ -247,18 +258,18 @@ public struct AffixKey
 
 public class WeaponStatGenerator
 {
-    public readonly Dictionary<AffixKey, System.Func<Effect>> affixEffectPairs = new()
+    public readonly Dictionary<Affix, System.Func<Effect>> affixEffectPairs = new()
     {
-        { new AffixKey(Prefix.Toxic), () => new Toxic() },
-        { new AffixKey(Prefix.Shredding), () => new Shredding() },
-        { new AffixKey(Prefix.Cold), () => new Cold() },
+        { new Affix(Prefix.Toxic), () => new Toxic() },
+        { new Affix(Prefix.Shredding), () => new Shredding() },
+        { new Affix(Prefix.Cold), () => new Cold() },
 
-        { new AffixKey(Suffix.Powerful), () => new Powerful() },
-        { new AffixKey(Suffix.Disorienting), () => new Disorienting() },
-        { new AffixKey(Suffix.Lovestruck), () => new Lovestruck() },
-        { new AffixKey(Suffix.Soft), () => new Soft() },
-        { new AffixKey(Suffix.Healing), () => new Healing() },
-        { new AffixKey(Suffix.Terrifying), () => new Terrifying() }
+        { new Affix(Suffix.Powerful), () => new Powerful() },
+        { new Affix(Suffix.Disorienting), () => new Disorienting() },
+        { new Affix(Suffix.Lovestruck), () => new Lovestruck() },
+        { new Affix(Suffix.Soft), () => new Soft() },
+        { new Affix(Suffix.Healing), () => new Healing() },
+        { new Affix(Suffix.Terrifying), () => new Terrifying() }
 
     };
 
@@ -266,14 +277,14 @@ public class WeaponStatGenerator
     {
         int i = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Prefix)).Length);
 
-        return affixEffectPairs[new AffixKey((Prefix)i)]();
+        return affixEffectPairs[new Affix((Prefix)i)]();
     }
 
     public Effect GenerateSuffix()
     {
         int i = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Suffix)).Length);
 
-        return affixEffectPairs[new AffixKey((Suffix)i)]();
+        return affixEffectPairs[new Affix((Suffix)i)]();
     }
 }
 

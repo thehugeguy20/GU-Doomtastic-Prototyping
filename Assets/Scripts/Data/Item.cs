@@ -41,7 +41,7 @@ public class Item
 
         if (_base != null)
         {
-            AddItemDataSO();
+            AddSOData();
         }
 
         title = $"{prefix.affixName} {suffix.affixName} {baseName}";
@@ -53,7 +53,7 @@ public class Item
         return knockbackStrength.total * chargeMultiplier.Evaluate(charge) * direction;
     } 
 
-    private void AddItemDataSO()
+    private void AddSOData()
     {
         attackRange = Base.attackRange;
         knockbackStrength = Base.KnockbackStrength;

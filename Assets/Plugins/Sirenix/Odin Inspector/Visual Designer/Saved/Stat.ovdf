@@ -2,8 +2,15 @@ OVDF v1.1
 Stat, Assembly-CSharp
 
 # $JnXax3nQa6oDjgYg5WkmKC
-Position: $root:5
+Position: $root:7
 + [Sirenix.OdinInspector.VerticalGroupAttribute]
+
+# $3JyxQGDgoM7RjdBNn42Raz
+Position: $root:1
++ [Sirenix.OdinInspector.BoxGroupAttribute]
+	ShowLabel = True
+	CenterLabel = False
+	LabelText = "FINAL VALUE"
 
 # flats
 Position: $JnXax3nQa6oDjgYg5WkmKC:0
@@ -12,3 +19,16 @@ Position: $JnXax3nQa6oDjgYg5WkmKC:0
 
 # additives
 Position: $JnXax3nQa6oDjgYg5WkmKC:1
+
+# total
+Visibility: Hidden
+
+# value
+Position: $3JyxQGDgoM7RjdBNn42Raz:0
+Visibility: Shown
++ [Sirenix.OdinInspector.HideLabelAttribute]
++ [Sirenix.OdinInspector.DisableInEditorModeAttribute]
++ [Sirenix.OdinInspector.HideInEditorModeAttribute]
+
+# changes
+Visibility: Shown
