@@ -1,0 +1,20 @@
+OVDF v1.1
+EnemyDataScriptableObject, Assembly-CSharp
+MetaGuid:ed1f0c7648d7941b49895036adc42b08
+
+# $DydH2L9vDq15vudcCkJQAZ
+Position: $root:1
++ [Sirenix.OdinInspector.TitleGroupAttribute]
+	GroupName = "Initialisation Stats"
+	Subtitle = "The min & max BASE stats of an enemy. can still go up in-game."
+	Alignment = Left
+	HorizontalLine = True
+
+# minMaxSPD
+Position: $DydH2L9vDq15vudcCkJQAZ:2
+
+# minMaxDEF
+Position: $DydH2L9vDq15vudcCkJQAZ:1
+
+# minMaxHP
+Position: $DydH2L9vDq15vudcCkJQAZ:0

@@ -1,0 +1,11 @@
+OVDF v1.1
+EnemyCore, Assembly-CSharp
+MetaGuid:f976e0f611e6646299bff965b54beb76
+
+# _base
++ [Sirenix.OdinInspector.InlineEditorAttribute]
+	ObjectFieldMode = Boxed
+	DrawPreview = True
+	DrawHeader = True
+	expanded = True
+	ExpandedHasValue = True

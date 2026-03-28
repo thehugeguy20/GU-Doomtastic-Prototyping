@@ -1,0 +1,8 @@
+OVDF v1.1
+RayCaster, Assembly-CSharp
+
+# sphereRadius
+Position: $root:1
+
+# findType
+Position: $root:0

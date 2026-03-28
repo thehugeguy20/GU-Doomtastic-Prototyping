@@ -1,0 +1,55 @@
+OVDF v1.1
+ItemDataScriptableObject, Assembly-CSharp
+MetaGuid:dfc622aa94f8b478fb20913f701fa49f
+
+# $GCoPHPSAfNFuQsN6L3Cvbn
+Position: $root:2
++ [Sirenix.OdinInspector.TitleGroupAttribute]
+	VisibleIf = ""
+	Subtitle = "    "
+	GroupName = "Required Stats"
+	Alignment = Centered
+	Indent = True
+
+# $2Nggv5QCyaS4sjatPttFGF
+Position: $root:3
++ [Sirenix.OdinInspector.TitleGroupAttribute]
+	GroupName = "Properties"
+	Alignment = Centered
+	Indent = True
+
+# $VTXkosf413jA1gzhPjP9Rt
+Position: $root:4
++ [Sirenix.OdinInspector.TitleGroupAttribute]
+	GroupName = "Optional Stats"
+	Alignment = Centered
+	Indent = True
+
+# durability
+Position: $VTXkosf413jA1gzhPjP9Rt:0
++ [Sirenix.OdinInspector.HideIfAttribute]
+	Condition = ""
+
+# damage
+Position: $GCoPHPSAfNFuQsN6L3Cvbn:1
+
+# attackRange
+Position: $GCoPHPSAfNFuQsN6L3Cvbn:0
+
+# KnockbackStrength
+Position: $GCoPHPSAfNFuQsN6L3Cvbn:2
+
+# charge
+Position: $root:3
+
+# isTwoHanded
+Position: $2Nggv5QCyaS4sjatPttFGF:0
+
+# ChargeMultiplier
+Position: $2Nggv5QCyaS4sjatPttFGF:1
+
+# prefab
+Position: $root:1
+
+# baseName
+Position: $root:0
