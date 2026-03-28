@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Spider_Data
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataScriptableObject
   prefab: {fileID: 4102012463931480542, guid: 51e286d8784ac4c8494a9302aa8265f2, type: 3}
-  minMaxHP: {x: 5.384616, y: 9.202279}
+  minMaxHP: {x: 1.0784314, y: 3.7254903}
   minMaxDEF: {x: 0.64690024, y: 4.624506}
   minMaxSPD: {x: 5.525606, y: 8.814229}

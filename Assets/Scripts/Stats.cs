@@ -110,10 +110,32 @@ public abstract class Effect
     }
 }
 
+public class EmptyPrefix : Effect
+{
+    public override Affix affix { get => new(Prefix.Null); }
+    public override string affixName { get => "";}
+
+    protected override float Generate(float difficulty)
+    {
+        return 0f;
+    }
+}
+
+public class EmptySuffix : Effect
+{
+    public override Affix affix { get => new(Suffix.Null); }
+    public override string affixName { get => "";}
+
+    protected override float Generate(float difficulty)
+    {
+        return 0f;
+    }
+}
+
 public class Cold : Effect
 {
     public override Affix affix { get => new(Prefix.Cold); }
-    public override string affixName { get => "Cold";}
+    public override string affixName { get => "Cold ";}
 
     protected override float Generate(float difficulty)
     {
@@ -124,7 +146,7 @@ public class Cold : Effect
 public class Toxic : Effect
 {
     public override Affix affix { get => new(Prefix.Toxic); }
-    public override string affixName { get => "Toxic";}
+    public override string affixName { get => "Toxic ";}
     
     protected override float Generate(float difficulty)
     {
@@ -135,7 +157,7 @@ public class Toxic : Effect
 public class Shredding : Effect
 {
     public override Affix affix { get => new(Prefix.Shredding); }
-    public override string affixName { get => "Shredding";}
+    public override string affixName { get => "Shredding ";}
 
     protected override float Generate(float difficulty)
     {
@@ -146,7 +168,7 @@ public class Shredding : Effect
 public class Powerful : Effect
 {
     public override Affix affix { get => new(Suffix.Powerful); }
-    public override string affixName { get => "Powerful";}
+    public override string affixName { get => "Powerful ";}
 
     protected override float Generate(float difficulty)
     {
@@ -161,7 +183,7 @@ public class Powerful : Effect
 public class Disorienting : Effect
 {
     public override Affix affix { get => new(Suffix.Disorienting); }
-    public override string affixName { get => "Disorienting";}
+    public override string affixName { get => "Disorienting ";}
 
     protected override float Generate(float difficulty)
     {
@@ -172,7 +194,7 @@ public class Disorienting : Effect
 public class Lovestruck : Effect
 {
     public override Affix affix { get => new(Suffix.Lovestruck); }
-    public override string affixName { get => "Lovestruck";}
+    public override string affixName { get => "Lovestruck ";}
 
     protected override float Generate(float difficulty)
     {
@@ -183,7 +205,7 @@ public class Lovestruck : Effect
 public class Soft : Effect
 {
     public override Affix affix { get => new(Suffix.Soft); }
-    public override string affixName { get => "Soft";}
+    public override string affixName { get => "Soft ";}
 
     protected override float Generate(float difficulty)
     {
@@ -194,7 +216,7 @@ public class Soft : Effect
 public class Healing : Effect
 {
     public override Affix affix { get => new(Suffix.Healing); }
-    public override string affixName { get => "Healing";}
+    public override string affixName { get => "Healing ";}
 
     protected override float Generate(float difficulty)
     {
@@ -205,7 +227,7 @@ public class Healing : Effect
 public class Terrifying : Effect
 {
     public override Affix affix { get => new(Suffix.Terrifying); }
-    public override string affixName { get => "Terrifying";}
+    public override string affixName { get => "Terrifying ";}
 
     protected override float Generate(float difficulty)
     {
@@ -215,6 +237,7 @@ public class Terrifying : Effect
 
 public enum Prefix
 {
+    Null,
     Toxic,
     Shredding,
     Cold
@@ -222,6 +245,7 @@ public enum Prefix
 
 public enum Suffix
 {
+    Null,
     Powerful,
     Disorienting,
     Lovestruck,
@@ -253,7 +277,6 @@ public struct Affix
         type = AffixType.Suffix;
         value = (int)suffix;
     }
-
 }
 
 public class WeaponStatGenerator
@@ -275,16 +298,30 @@ public class WeaponStatGenerator
 
     public Effect GeneratePrefix()
     {
-        int i = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Prefix)).Length);
+        if (UnityEngine.Random.Range(0, 10) != 0)
+        {
+            return new EmptyPrefix();
+        }
+        else
+        {
+            int i = UnityEngine.Random.Range(1, Enum.GetNames(typeof(Prefix)).Length);
 
-        return affixEffectPairs[new Affix((Prefix)i)]();
+            return affixEffectPairs[new Affix((Prefix)i)]();
+        }
     }
 
     public Effect GenerateSuffix()
     {
-        int i = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Suffix)).Length);
+        if (UnityEngine.Random.Range(0, 6) != 0)
+        {
+            return new EmptySuffix();
+        }
+        else
+        {
+            int i = UnityEngine.Random.Range(1, Enum.GetNames(typeof(Suffix)).Length);
 
-        return affixEffectPairs[new Affix((Suffix)i)]();
+            return affixEffectPairs[new Affix((Suffix)i)]();
+        }
     }
 }
 

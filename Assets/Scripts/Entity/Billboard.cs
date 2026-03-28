@@ -7,12 +7,17 @@ public class Billboard : MonoBehaviour
     public enum BillboardType {LookAtCamera, CameraForward};
     
 
-    void Update()
+    void LateUpdate()
     {
         switch (billboardType)
         {
             case BillboardType.LookAtCamera:
-                transform.LookAt(Camera.main.transform.position, Vector3.up);
+                transform.LookAt(new Vector3
+                (
+                    Camera.main.transform.position.x,
+                    this.transform.position.y,
+                    Camera.main.transform.position.z
+                ), Vector3.up);
                 break;
             case BillboardType.CameraForward:
                 transform.forward = Camera.main.transform.forward;

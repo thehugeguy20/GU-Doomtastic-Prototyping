@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Diagnostics;
 
 [Serializable]
 public class Item
@@ -44,8 +45,8 @@ public class Item
             AddSOData();
         }
 
-        title = $"{prefix.affixName} {suffix.affixName} {baseName}";
-
+        title = $"{prefix.affixName}{suffix.affixName}{baseName}";
+        UnityEngine.Debug.Log(title);
     }
 
     public Vector3 GetKnockbackStrength(Vector3 direction, float charge)
@@ -62,7 +63,7 @@ public class Item
         chargeMultiplier = Base.ChargeMultiplier;
         durability = Base.durability;
         isTwoHanded = Base.isTwoHanded;
-        baseName = Base.name;
+        baseName = Base.baseName;
         prefab = Base.prefab;
     }
 }

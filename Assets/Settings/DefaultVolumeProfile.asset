@@ -37,13 +37,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.90405107, b: 0.5707547, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -0
+    m_Value: 0
 --- !u!114 &-8104416584915340131
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -173,7 +173,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 50
 --- !u!114 &-6288072647309666549
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -214,7 +214,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
   neutralHDRRangeReductionMode:
     m_OverrideState: 1
     m_Value: 2
@@ -298,7 +298,7 @@ MonoBehaviour:
     m_Value: 0
   cropToFit:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
 --- !u!114 &-1410297666881709256
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -413,7 +413,7 @@ MonoBehaviour:
     m_Value: 0
   tint:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 0
 --- !u!114 &-581120513425526550
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -722,13 +722,22 @@ MonoBehaviour:
   hueVsSat:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 1
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.39104477
+          value: 0.5031847
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -793,7 +802,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
     m_Value: 10
@@ -814,7 +823,7 @@ MonoBehaviour:
     m_Value: 5.6
   focalLength:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 1
   bladeCount:
     m_OverrideState: 1
     m_Value: 5
@@ -890,7 +899,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.197
+    m_Value: 0.096
   smoothness:
     m_OverrideState: 1
     m_Value: 1
@@ -924,7 +933,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.01
 --- !u!114 &9001657382290151224
 MonoBehaviour:
   m_ObjectHideFlags: 3

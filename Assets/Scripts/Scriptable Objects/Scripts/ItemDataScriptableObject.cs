@@ -4,7 +4,6 @@ using UnityEngine;
 public class ItemDataScriptableObject : ScriptableObject
 {
     public GameObject prefab;
-
     public string baseName;
 
     // base stats: 

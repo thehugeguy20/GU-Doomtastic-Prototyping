@@ -360,10 +360,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -871.9999389648438,
-            "y": 438.9999694824219,
+            "x": -1074.9998779296875,
+            "y": 460.9998779296875,
             "width": 208.0,
-            "height": 311.9999694824219
+            "height": 311.5
         }
     },
     "m_Slots": [
@@ -923,7 +923,7 @@
         "w": 0.0
     },
     "m_Labels": [],
-    "m_ScreenSpaceType": 0
+    "m_ScreenSpaceType": 4
 }
 
 {

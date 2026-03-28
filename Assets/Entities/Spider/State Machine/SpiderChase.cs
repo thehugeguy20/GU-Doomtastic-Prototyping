@@ -3,13 +3,12 @@ using UnityEngine.AI;
 
 public class SpiderChase : EntityState
 {
-    [SerializeField] private NavMeshAgent agent;
-    
-    GameObject player;
-
     public override void Enter(EntityState _lastState)
     {
-        player = GameObject.Find("Player");
+        if (Vector3.Distance(this.transform.position, player.transform.position) < 2.3)
+        {
+            manager.state.ChangeState(manager.FindState("SpiderAttack"));
+        }
         animator.Play(anim.name);
     }
     public override void Do()
@@ -17,6 +16,10 @@ public class SpiderChase : EntityState
         if(agent.enabled == true)
         {
             agent.SetDestination(player.transform.position);
+        }
+        if (Vector3.Distance(this.transform.position, player.transform.position) < 2.3)
+        {
+            manager.state.ChangeState(manager.FindState("SpiderAttack"));
         }
     }
     public override void FixedDo()
