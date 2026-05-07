@@ -17,12 +17,45 @@ MonoBehaviour:
   damage:
     isEnabled: 1
     baseValue: 1
+    min:
+      isEnabled: 1
+      baseValue: 0
+      min: 0
+      max: 0
+    max:
+      isEnabled: 1
+      baseValue: 20
+      min: 20
+      max: 30
+    changes: 0
   attackRange:
     isEnabled: 1
     baseValue: 1
+    min:
+      isEnabled: 1
+      baseValue: 1
+      min: 1
+      max: 2
+    max:
+      isEnabled: 1
+      baseValue: 6
+      min: 6
+      max: 6
+    changes: 0
   KnockbackStrength:
     isEnabled: 1
     baseValue: 1
+    min:
+      isEnabled: 1
+      baseValue: 1
+      min: 1
+      max: 2
+    max:
+      isEnabled: 1
+      baseValue: 6
+      min: 6
+      max: 6
+    changes: 0
   isTwoHanded: 0
   ChargeMultiplier:
     serializedVersion: 2
@@ -48,6 +81,18 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  icon: {fileID: 21300000, guid: 1cf3ff9d1f8524c49a60e59c818e9210, type: 3}
   durability:
     isEnabled: 1
     baseValue: 1
+    min:
+      isEnabled: 0
+      baseValue: 0
+      min: 0
+      max: 0
+    max:
+      isEnabled: 0
+      baseValue: 0
+      min: 0
+      max: 0
+    changes: 0
