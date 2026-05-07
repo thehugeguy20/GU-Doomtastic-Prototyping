@@ -3,30 +3,34 @@ using UnityEngine;
 
 public abstract class Abilities : MonoBehaviour, IAbilities
 {
-
-    [SerializeField] private KeyCode Primary;
-    [SerializeField] private KeyCode Secondary;
-    [SerializeField] private KeyCode Tertiary;
+    private readonly PlayerInputActions inputActions;
 
     protected void RunAbilities()
     {
-        if (Input.GetKeyDown(Primary)) {PrimaryIn();}
-        if (Input.GetKeyUp(Primary)) {PrimaryOut();}
+        // PlayerInputActions.GameplayActions input = inputActions.Gameplay;
 
-        if (Input.GetKeyDown(Secondary)) {SecondaryIn();}
-        if (Input.GetKeyUp(Secondary)) {SecondaryOut();}   
+        // if (input.RightHandPrimary.WasPressedThisFrame()) {RightPrimaryIn();}
+        // if (input.RightHandPrimary.WasReleasedThisFrame()) {RightPrimaryOut();}
 
-        if (Input.GetKeyDown(Tertiary)) {TertiaryIn();}
-        if (Input.GetKeyUp(Tertiary)) {TertiaryOut();} 
+        // if (input.RightHandSecondary.WasPressedThisFrame()) {RightSecondaryIn();}
+        // if (input.RightHandSecondary.WasReleasedThisFrame()) {RightSecondaryOut();}
+
+        // if (input.RightHandPrimary.WasPressedThisFrame()) {LeftPrimaryIn();}
+        // if (input.RightHandPrimary.WasReleasedThisFrame()) {LeftPrimaryOut();}
+
+        // if (input.RightHandSecondary.WasPressedThisFrame()) {LeftSecondaryIn();}
+        // if (input.RightHandSecondary.WasReleasedThisFrame()) {LeftPrimaryOut();}
     }
 
-    virtual public void PrimaryIn() {}
-    virtual public void PrimaryOut() {}
+    virtual public void RightPrimaryIn() {}
+    virtual public void RightPrimaryOut() {}
 
-    virtual public void SecondaryIn() {}
-    virtual public void SecondaryOut() {}
+    virtual public void RightSecondaryIn() {}
+    virtual public void RightSecondaryOut() {}
 
-    virtual public void TertiaryIn() {}
-    virtual public void TertiaryOut() {}
+    virtual public void LeftPrimaryIn() {}
+    virtual public void LeftPrimaryOut() {}
 
+    virtual public void LeftSecondaryIn() {}
+    virtual public void LeftSecondaryOut() {}
 }

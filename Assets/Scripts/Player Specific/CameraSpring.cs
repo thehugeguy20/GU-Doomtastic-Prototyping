@@ -3,13 +3,17 @@ using UnityEngine;
 
 public class CameraSpring : MonoBehaviour
 {
+    // how long it takes before the strength of the oscillation is halved (over and over until it becomes a tiny number)
     [Min(0.01f)]
     [SerializeField] private float halfLife = 0.075f;
+    // how quickly the spring resonates
     [SerializeField] private float frequency = 18f;
+
+    // these handle how much the spring offsets the camera's rotation vs it's position
     [SerializeField] private float angularDispacement = 2f;
     [SerializeField] private float linearDisplacement = 0.05f;
 
-
+    // pos and velocity of spring
     private Vector3 springPosition;
     private Vector3 springVelocity;
 
@@ -20,13 +24,19 @@ public class CameraSpring : MonoBehaviour
     }
 
     public void UpdateSpring(float deltaTime, Vector3 up)
-    {
+    {   // set local pos of spring to 0 (safety)
         transform.localPosition = Vector3.zero;
+
+        // make the spring do the spring
         Spring(ref springPosition, ref springVelocity, transform.position, halfLife, frequency, deltaTime);
 
+        // get the spring's local position via difference between spring's simulated position and actual transform position 
         Vector3 localSpringPosition = springPosition - transform.position;
+
+        // height of spring equals the dot product of the spring's local position and a given up vector, (so we know how far above or below the camera target the spring is)
         float springHeight = Vector3.Dot(localSpringPosition, up);
 
+        // offset the transform's local pitch
         transform.localEulerAngles = new Vector3(-springHeight * angularDispacement, 0f, 0f);
         transform.localPosition = localSpringPosition * linearDisplacement;
     }

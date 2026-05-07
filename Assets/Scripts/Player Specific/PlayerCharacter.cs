@@ -142,7 +142,7 @@ public class PlayerCharacter : MonoBehaviour, ICharacterController
         // if not on the ground (in the air)
         else
         {
-            //move
+            // move
             if (_requestedMovement.sqrMagnitude > 0f)
             {
                 // movement is projected onto a movement plane (aka planar)

@@ -14,7 +14,7 @@ public class HurtState : EntityState
     {
         if (time >= hurtLength ) 
         {
-            manager.state.ChangeState(manager.FindState("Move"));
+            manager.currentState.ChangeState(manager.action.FindState("Move"));
         }
 
     }

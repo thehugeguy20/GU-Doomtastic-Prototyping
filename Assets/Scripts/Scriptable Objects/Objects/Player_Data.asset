@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b311f6625c2a47cbb02d46158bc4189, type: 3}
+  m_Name: Player_Data
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataScriptableObject
+  prefab: {fileID: 5212531353673507720, guid: 8bd067b60aab54a2eb4170fc5d16acbd, type: 3}
+  health:
+    isEnabled: 1
+    baseValue: 10
+    min:
+      isEnabled: 1
+      baseValue: 0
+      min: 0
+      max: 0
+    max:
+      isEnabled: 1
+      baseValue: 30
+      min: 30
+      max: 40
+    changes: 0
+  defense:
+    isEnabled: 1
+    baseValue: 5
+    min:
+      isEnabled: 1
+      baseValue: 0
+      min: 0
+      max: 0
+    max:
+      isEnabled: 1
+      baseValue: 10
+      min: 5
+      max: 20
+    changes: 0
+  speed:
+    isEnabled: 1
+    baseValue: 5
+    min:
+      isEnabled: 1
+      baseValue: 1
+      min: 1
+      max: 1
+    max:
+      isEnabled: 1
+      baseValue: 10
+      min: 10
+      max: 10
+    changes: 0
+  agility:
+    isEnabled: 1
+    baseValue: 4
+    min:
+      isEnabled: 1
+      baseValue: 1
+      min: 1
+      max: 1
+    max:
+      isEnabled: 1
+      baseValue: 10
+      min: 10
+      max: 15
+    changes: 0

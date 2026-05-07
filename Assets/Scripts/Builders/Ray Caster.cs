@@ -11,6 +11,7 @@ public class RayCaster : MonoBehaviour
 
     public RaycastHit Cast(FindType findType)
     {
+        //
         if (findType == FindType.LineForward)
         {
             Ray ray = new(camTransform.position, camTransform.forward);

@@ -23,11 +23,11 @@ public class PullBack : ItemState
             {
                 ItemState nextState = manager.pendingState;
                 manager.pendingState = null;
-                manager.state.ChangeState(nextState);
+                manager.action.state.ChangeState(nextState);
             }
             else 
             {
-                manager.state.ChangeState(manager.FindState("Hold"));
+                manager.action.state.ChangeState(manager.action.FindState("Hold"));
             }
         }
     }

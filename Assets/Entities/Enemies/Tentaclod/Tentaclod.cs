@@ -12,23 +12,23 @@ public class Tentaclod : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            manager.state.ChangeState(manager.FindState("Idle"));
+            manager.currentState.ChangeState(manager.action.FindState("Idle"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            manager.state.ChangeState(manager.FindState("Move"));
+            manager.currentState.ChangeState(manager.action.FindState("Move"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            manager.state.ChangeState(manager.FindState("Attack"));
+            manager.currentState.ChangeState(manager.action.FindState("Attack"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            manager.state.ChangeState(manager.FindState("Death"));
+            manager.currentState.ChangeState(manager.action.FindState("Death"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            manager.state.ChangeState(manager.FindState("Hurt"));
+            manager.currentState.ChangeState(manager.action.FindState("Hurt"));
         }
     }
 }

@@ -23,9 +23,9 @@ public class Swing : ItemState
 
             if(hitInfo.collider != null)
             {
-                foreach (ITakeDamage damagee in hitInfo.collider.gameObject.GetComponents<ITakeDamage>())
+                foreach (ITakeDamage damagedObj in hitInfo.collider.gameObject.GetComponents<ITakeDamage>())
                 {
-                    damagee.TakeDamage(manager.item);
+                    damagedObj.TakeDamage(manager.item);
                 }
 
                 if(hitInfo.collider.gameObject.TryGetComponent(out IKnockbackable knockbackable) && item.charge != float.NaN)
@@ -58,7 +58,7 @@ public class Swing : ItemState
 
         if (time >= anim.length)
         {
-            manager.state.ChangeState(manager.FindState("Idle"));
+            manager.action.state.ChangeState(manager.action.FindState("Idle"));
         }
     }
 

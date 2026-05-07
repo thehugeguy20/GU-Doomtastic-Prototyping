@@ -1,47 +1,38 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class StateManager<TManager, TState> : MonoBehaviour
-where TManager : StateManager<TManager, TState>
-where TState : State<TManager, TState>
+public class StateManager<TManager, TState, TAction> : MonoBehaviour
+where TManager : StateManager<TManager, TState, TAction>
+where TState : State<TManager, TState, TAction>
+where TAction : Action<TManager, TState, TAction>
 {
-    internal TState state;
+    internal TAction action;
     public TState pendingState;
-    [SerializeField] private TState defaultState;
-    public List<TState> states = new();
+    [SerializeField] private TAction defaultAction;
+    public TState currentState => action.state;
 
     void Start()
     {
-        state = defaultState;
+        action = defaultAction;
     }
 
     void Update()
     {
-        state.Do();
-    }
-
-    public void RequestState(string name)
-    {
-        pendingState = FindState(name);
-    }
-
-    public TState FindState(string name)
-    {
-        foreach (TState state in states)
+        if (action != null)
         {
-            if (state.name == name)
-            {
-                return state;
-            }
+            action.state.Do();
         }
-        return null;
     }
 
-    public void EnterDefaultState()
+    public void EnterDefaultAction()
     {
-        state = defaultState;
-        state.Enter(null);
+        action = defaultAction;
+
+        action.ReturnToDefault();
+
+        action.state.Enter(null);
     }
 
 }

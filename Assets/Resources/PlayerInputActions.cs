@@ -127,6 +127,51 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""9049a56c-c03f-41cf-b486-2d7defa2e971"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Right Hand Primary"",
+                    ""type"": ""Button"",
+                    ""id"": ""ecf6557d-7495-4142-bf98-c1aefca0de83"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Left Hand Primary"",
+                    ""type"": ""Button"",
+                    ""id"": ""dc5ff328-54e0-4cd4-b65b-9242fdff20db"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Right Hand Secondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad419c6c-1ac3-4e1f-b838-4fa6e7da9200"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Left Hand Secondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9643ae0-8957-46a9-a2fa-6df33641a06e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -338,6 +383,116 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e1a0376-67ce-4cd4-9ea5-be4ecacd847b"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5c14d1e-56db-4ac6-94ee-2a0c22033af1"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""193e2817-2400-41af-92a9-dee78d253172"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Hand Primary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d624b78-c813-4217-acb4-67bf0bb5f27c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Hand Primary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6219de01-42da-4d93-942a-8c0c09e26b36"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Hand Primary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""559d9d1b-fd98-4359-abb1-7310f0ffc06d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Hand Primary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe63be8d-faaa-4d48-8ae3-154c471156c1"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Hand Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dae3a64c-8f71-4544-bdfc-4dfcac9f4d95"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Hand Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e9ac0d8-a07a-44bb-9b1a-ee77bf34cbbd"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Hand Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e6015f4-ca1c-4110-a8d7-a4f5e86b89ec"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Hand Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -350,6 +505,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Crouch = m_Gameplay.FindAction("Crouch", throwIfNotFound: true);
+        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_RightHandPrimary = m_Gameplay.FindAction("Right Hand Primary", throwIfNotFound: true);
+        m_Gameplay_LeftHandPrimary = m_Gameplay.FindAction("Left Hand Primary", throwIfNotFound: true);
+        m_Gameplay_RightHandSecondary = m_Gameplay.FindAction("Right Hand Secondary", throwIfNotFound: true);
+        m_Gameplay_LeftHandSecondary = m_Gameplay.FindAction("Left Hand Secondary", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -434,6 +594,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Crouch;
+    private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_RightHandPrimary;
+    private readonly InputAction m_Gameplay_LeftHandPrimary;
+    private readonly InputAction m_Gameplay_RightHandSecondary;
+    private readonly InputAction m_Gameplay_LeftHandSecondary;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -461,6 +626,26 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Crouch".
         /// </summary>
         public InputAction @Crouch => m_Wrapper.m_Gameplay_Crouch;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Interact".
+        /// </summary>
+        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/RightHandPrimary".
+        /// </summary>
+        public InputAction @RightHandPrimary => m_Wrapper.m_Gameplay_RightHandPrimary;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/LeftHandPrimary".
+        /// </summary>
+        public InputAction @LeftHandPrimary => m_Wrapper.m_Gameplay_LeftHandPrimary;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/RightHandSecondary".
+        /// </summary>
+        public InputAction @RightHandSecondary => m_Wrapper.m_Gameplay_RightHandSecondary;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/LeftHandSecondary".
+        /// </summary>
+        public InputAction @LeftHandSecondary => m_Wrapper.m_Gameplay_LeftHandSecondary;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -499,6 +684,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @RightHandPrimary.started += instance.OnRightHandPrimary;
+            @RightHandPrimary.performed += instance.OnRightHandPrimary;
+            @RightHandPrimary.canceled += instance.OnRightHandPrimary;
+            @LeftHandPrimary.started += instance.OnLeftHandPrimary;
+            @LeftHandPrimary.performed += instance.OnLeftHandPrimary;
+            @LeftHandPrimary.canceled += instance.OnLeftHandPrimary;
+            @RightHandSecondary.started += instance.OnRightHandSecondary;
+            @RightHandSecondary.performed += instance.OnRightHandSecondary;
+            @RightHandSecondary.canceled += instance.OnRightHandSecondary;
+            @LeftHandSecondary.started += instance.OnLeftHandSecondary;
+            @LeftHandSecondary.performed += instance.OnLeftHandSecondary;
+            @LeftHandSecondary.canceled += instance.OnLeftHandSecondary;
         }
 
         /// <summary>
@@ -522,6 +722,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @RightHandPrimary.started -= instance.OnRightHandPrimary;
+            @RightHandPrimary.performed -= instance.OnRightHandPrimary;
+            @RightHandPrimary.canceled -= instance.OnRightHandPrimary;
+            @LeftHandPrimary.started -= instance.OnLeftHandPrimary;
+            @LeftHandPrimary.performed -= instance.OnLeftHandPrimary;
+            @LeftHandPrimary.canceled -= instance.OnLeftHandPrimary;
+            @RightHandSecondary.started -= instance.OnRightHandSecondary;
+            @RightHandSecondary.performed -= instance.OnRightHandSecondary;
+            @RightHandSecondary.canceled -= instance.OnRightHandSecondary;
+            @LeftHandSecondary.started -= instance.OnLeftHandSecondary;
+            @LeftHandSecondary.performed -= instance.OnLeftHandSecondary;
+            @LeftHandSecondary.canceled -= instance.OnLeftHandSecondary;
         }
 
         /// <summary>
@@ -590,5 +805,40 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCrouch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Right Hand Primary" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightHandPrimary(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Left Hand Primary" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftHandPrimary(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Right Hand Secondary" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightHandSecondary(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Left Hand Secondary" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftHandSecondary(InputAction.CallbackContext context);
     }
 }

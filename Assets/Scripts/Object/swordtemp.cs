@@ -13,12 +13,12 @@ public class swordtemp : Abilities
         RunAbilities();
     }
 
-    public override void PrimaryIn()
-    {
-        manager.state.ChangeState(manager.FindState("PullBack"));
-    }
-    public override void PrimaryOut()
-    {
-        manager.state.ChangeState(manager.FindState("Swing"));
-    }
+    // public override void PrimaryIn()
+    // {
+    //     manager.state.ChangeState(manager.FindState("PullBack"));
+    // }
+    // public override void PrimaryOut()
+    // {
+    //     manager.state.ChangeState(manager.FindState("Swing"));
+    // }
 }

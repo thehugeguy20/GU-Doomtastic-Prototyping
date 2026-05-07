@@ -12,23 +12,23 @@ public class Spider : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            manager.state.ChangeState(manager.FindState("SpiderIdle"));
+            manager.currentState.ChangeState(manager.action.FindState("SpiderIdle"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            manager.state.ChangeState(manager.FindState("SpiderChase"));
+            manager.currentState.ChangeState(manager.action.FindState("SpiderChase"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            manager.state.ChangeState(manager.FindState("SpiderAttack"));
+            manager.currentState.ChangeState(manager.action.FindState("SpiderAttack"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            manager.state.ChangeState(manager.FindState("SpiderDeath"));
+            manager.currentState.ChangeState(manager.action.FindState("SpiderDeath"));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            manager.state.ChangeState(manager.FindState("SpiderHurt"));
+            manager.action.state.ChangeState(manager.action.FindState("SpiderHurt"));
         }
     }
 }

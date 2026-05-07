@@ -12,6 +12,7 @@ public class Billboard : MonoBehaviour
         switch (billboardType)
         {
             case BillboardType.LookAtCamera:
+                // look at the camera, but not upwards or downwards. only ever forward (because this LookAt is given this object's own y position)
                 transform.LookAt(new Vector3
                 (
                     Camera.main.transform.position.x,

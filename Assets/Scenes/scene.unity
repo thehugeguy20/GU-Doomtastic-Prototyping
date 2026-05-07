@@ -7471,26 +7471,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
-    - target: {fileID: 2059709205328724615, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2984187335687318022, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: sword
-      value: 
-      objectReference: {fileID: 2059709205328724615, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-    - target: {fileID: 3744990370883484796, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.base_
-      value: 
-      objectReference: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
-    - target: {fileID: 3744990370883484796, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.charge
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 3744990370883484796, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.prefab
-      value: 
-      objectReference: {fileID: 2059709205328724615, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
     - target: {fileID: 5271115728073418253, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.4
@@ -7531,40 +7511,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 58.6
       objectReference: {fileID: 0}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.name
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.base_
-      value: 
-      objectReference: {fileID: 11400000, guid: 32a8004ac45594a0696a438c7d111295, type: 2}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.charge
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.prefab
-      value: 
-      objectReference: {fileID: 2059709205328724615, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.object_
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.damageType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: item.durability
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 7004665163199373642, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6053706908767912919, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -33361,7 +33308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4342984051545506670, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5184289327901953917, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33441,7 +33388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5269945355364510514, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5286307983767585980, guid: b398d1b8991e24e2cb979488ccab153c, type: 3}
       propertyPath: m_Enabled
@@ -33480,7 +33427,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 1.8
   m_Radius: 0.5

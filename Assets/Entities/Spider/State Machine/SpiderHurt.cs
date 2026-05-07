@@ -14,7 +14,7 @@ public class SpiderHurt : EntityState
     {
         if (time >= hurtLength ) 
         {
-            manager.state.ChangeState(manager.FindState("SpiderChase"));
+            manager.action.state.ChangeState(manager.action.FindState("SpiderChase"));
         }
 
     }

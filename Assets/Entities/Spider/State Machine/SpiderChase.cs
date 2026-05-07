@@ -5,9 +5,9 @@ public class SpiderChase : EntityState
 {
     public override void Enter(EntityState _lastState)
     {
-        if (Vector3.Distance(this.transform.position, player.transform.position) < 2.3)
+        if (Vector3.Distance(this.transform.position, playerPos) < 2.3)
         {
-            manager.state.ChangeState(manager.FindState("SpiderAttack"));
+            manager.action.state.ChangeState(manager.action.FindState("SpiderAttack"));
         }
         animator.Play(anim.name);
     }
@@ -15,11 +15,11 @@ public class SpiderChase : EntityState
     {
         if(agent.enabled == true)
         {
-            agent.SetDestination(player.transform.position);
+            agent.SetDestination(playerPos);
         }
-        if (Vector3.Distance(this.transform.position, player.transform.position) < 2.3)
+        if (Vector3.Distance(this.transform.position, playerPos) < 2.3)
         {
-            manager.state.ChangeState(manager.FindState("SpiderAttack"));
+            manager.action.state.ChangeState(manager.action.FindState("SpiderAttack"));
         }
     }
     public override void FixedDo()

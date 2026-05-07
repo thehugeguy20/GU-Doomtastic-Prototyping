@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,14 +9,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Equipment equipment;
     [SerializeField] private ItemDataScriptableObject swordData;
 
+    public GameObject inventoryUI;
+    private bool inInventory = false;
+
+    void Start()
+    {
+        if (inventoryUI == null)
+        {
+            inventoryUI = GameObject.Find("Inventory");
+        }
+    }
+
     void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.E))
         {
+            //cast a ray from camera, and returns information about what was hit (if something was)
             RaycastHit hitInfo = rayCaster.Cast(RayCaster.FindType.LineForward);
 
+            // if the collider component's gameobject has a pickup.cs component,
             if(hitInfo.collider.gameObject.TryGetComponent<Pickup>(out Pickup pickup))
             {
+                // then call that pickup's interact function, telling it that we've called it by passing it ourselves (this.gameobject)
                 pickup.Interact(this.gameObject);
 
                 if (equipment.rightHand.isEmpty)
@@ -53,5 +69,24 @@ public class PlayerController : MonoBehaviour
         {
             Item item = new(swordData);
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (inInventory == true)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                inInventory = false;
+                inventoryUI.SetActive(false);
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                inInventory = true;
+                inventoryUI.SetActive(true);
+            }
+        }
+
     }
 }

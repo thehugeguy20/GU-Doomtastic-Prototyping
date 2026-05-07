@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerInventoryUIManager : MonoBehaviour
 {
     public Inventory playerInventory;
+    public GameObject playerCharacter;
     public GameObject slotPrefab;
     public List<Slot> inventorySlots;
 
@@ -101,7 +102,6 @@ public class PlayerInventoryUIManager : MonoBehaviour
         }
         else
         {
-            Item rightHandItem = new Item(null);
             rightHand.pairedItem = new Item(null);
             rightHand.GetComponent<UnityEngine.UI.Image>().color = new Color (1, 1, 1, 0f);
         }
@@ -116,7 +116,6 @@ public class PlayerInventoryUIManager : MonoBehaviour
         }
         else
         {
-            Item leftHandItem = new Item(null);
             leftHand.pairedItem = new Item(null);
             leftHand.GetComponent<UnityEngine.UI.Image>().color = new Color (1, 1, 1, 0f);
         }
@@ -155,6 +154,14 @@ public class PlayerInventoryUIManager : MonoBehaviour
                 draggedSlot = null;
                 isDragging = false;
             }
+            else
+            {
+                DropOnGround(draggedSlot);
+                draggedSlot = null;
+                dragIcon.enabled = false;
+                isDragging = false;
+            }
+
         }
     }
 
@@ -183,6 +190,27 @@ public class PlayerInventoryUIManager : MonoBehaviour
         playerInventory.items[to.slotPos] = from.pairedItem;
         //playerInventory.RemoveAt(from.slotPos);
         playerInventory.items[from.slotPos] = new Item(null);
+    }
+
+    private void DropOnGround(Slot slot)
+    {
+        Item tempItem = slot.pairedItem;
+
+        playerInventory.items[slot.slotPos] = new Item(null);
+
+        GameObject droppedObj = Instantiate
+        (
+            tempItem.prefab, 
+            new Vector3
+            (
+                playerCharacter.transform.position.x,
+                2.07f,
+                playerCharacter.transform.position.z
+            ), 
+            playerCharacter.transform.rotation
+        );
+
+        droppedObj.GetComponent<ItemCore>().item = tempItem;
     }
 
     private void UpdateDraggedItemPosition()
