@@ -46,6 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: MainMenu
+    uniqueID: 2189833061
+    locked: 0
+  - name: MainMenuForeground
+    uniqueID: 426714071
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
