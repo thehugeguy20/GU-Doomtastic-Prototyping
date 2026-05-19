@@ -4,30 +4,34 @@ using UnityEngine.Serialization;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private int inventorySize = 10;
-
+    public int inventorySize = 10;
 
     [SerializeField] private Item[] _items;
 
     public Item[] items
     {
+        // fucked up getter/setter. using the .Base prefab to check slots are empty and what aren't, and then to set certain slots as empty by making .Base null.
         get
         {
             if (_items == null || _items.Length == 0)
             {
+                // create a new list with given inventory size
                 _items = new Item[inventorySize];
                 for (int i = 0; i < _items.Length; i++)
                 {
-                    _items[i] = new Item(null);
+                    //make a new item and set it's Base (an ItemDataScriptableObject) to null. this represents an empty slot.
+                    _items[i] = new Item(_base:null);
                 }
             }
             else
             {
                 for (int i = 0; i < _items.Length; i++)
                 {
-                    if (_items[i].Base == null)
+                    // check each Item within this array and if it's .Base is null, make absolutely sure that the class is correctly configured to represent an "empty slot"
+                    if ( (_items[i] == null || _items[i].Base == null ) && _items[i].cleared != true )
                     {
                         _items[i] = new Item(null);
+                        _items[i].cleared = true;
                     }
                 }
             }

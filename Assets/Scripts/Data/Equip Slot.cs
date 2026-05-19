@@ -7,10 +7,17 @@ public class EquipSlot : MonoBehaviour
 {
     [SerializeField] private Transform slot;
 
-    private GameObject currentObject;
-    internal Item currentItem;
+    [SerializeField] private GameObject currentObject;
+    [SerializeReference] internal Item currentItem;
 
-    public bool isEmpty => currentItem == null;
+    public bool isEmpty => currentItem == null || currentItem.Base == null;
+
+    [SerializeField] private bool isEmptyForUnity;
+
+    void Update()
+    {
+        isEmptyForUnity = isEmpty;
+    }
 
     public void Equip(Item item)
     {
@@ -49,7 +56,8 @@ public class EquipSlot : MonoBehaviour
             ItemStateManager manager = core.manager;
             if (manager != null)
             {
-                manager.EnterDefaultState();
+                manager.EnterDefaultAction();
+                manager.action.ReturnToDefault();
             }
         }
     }

@@ -4,8 +4,6 @@ using UnityEngine;
 public class PlayerCore : MonoBehaviour
 {
     public Camera cam => GetComponentInChildren<Camera>();
-
-    
     [SerializeField] private PlayerDataScriptableObject _base;
     [SerializeField] internal PlayerStats stats;
 

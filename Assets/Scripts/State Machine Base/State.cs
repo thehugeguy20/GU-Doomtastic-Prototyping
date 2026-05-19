@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
 
-public abstract class State<TStateManager, TState> : MonoBehaviour
-    where TStateManager : StateManager<TStateManager, TState>
-    where TState : State<TStateManager, TState>
+public abstract class State<TStateManager, TState, TAction> : MonoBehaviour
+    where TStateManager : StateManager<TStateManager, TState, TAction>
+    where TState : State<TStateManager, TState, TAction>
+    where TAction : Action<TStateManager, TState, TAction>
 {
     public bool isComplete {get; protected set;}
 
@@ -41,12 +42,12 @@ public abstract class State<TStateManager, TState> : MonoBehaviour
 
     public void ChangeState(TState _state)
     {
-        manager.state.Exit(_state);
+        manager.action.state.Exit(_state);
 
         if (_state != null)
         {    
-            manager.state = _state;
-            manager.state.Enter((TState)this);
+            manager.action.state = _state;
+            manager.action.state.Enter((TState)this);
         }
         else { Debug.Log($"STATE IS NULL, I AM {this}"); }
     }

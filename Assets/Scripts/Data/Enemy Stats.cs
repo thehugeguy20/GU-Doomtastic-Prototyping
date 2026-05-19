@@ -10,6 +10,7 @@ public class EnemyStats
     internal Stat health;
     internal Stat defense;
     internal Stat speed;
+    internal Stat damage;
 
     private readonly float TEMPDIFFICULTY = 1;
 
@@ -28,8 +29,38 @@ public class EnemyStats
     {
         prefab = Base.prefab;
 
-        health = new Stat(_toggleable:false, min:Base.minMaxHP.x, max:Base.minMaxHP.y, TEMPDIFFICULTY);
-        defense = new Stat(_toggleable:false, min:Base.minMaxDEF.x, max:Base.minMaxDEF.y, TEMPDIFFICULTY);
-        speed = new Stat(_toggleable:false, min:Base.minMaxSPD.x, max:Base.minMaxSPD.y, TEMPDIFFICULTY);
+        health = new Stat
+        (
+            _toggleable:false,
+            minBaseVal:Base.baseHP.x,
+            maxBaseVal:Base.baseHP.y,
+            TEMPDIFFICULTY,
+            Base.minHP,
+            Base.maxHP
+
+        );
+
+        defense = new Stat
+        (
+            _toggleable:false,
+            minBaseVal:Base.baseHP.x,
+            maxBaseVal:Base.baseHP.y,
+            TEMPDIFFICULTY,
+            Base.minDEF,
+            Base.maxDEF
+
+        );
+
+        speed = new Stat
+        (
+            _toggleable:false,
+            minBaseVal:Base.baseHP.x,
+            maxBaseVal:Base.baseHP.y,
+            TEMPDIFFICULTY,
+            Base.minSPD,
+            Base.maxSPD
+        );
+
+        damage = Base.damage;
     }
 }
