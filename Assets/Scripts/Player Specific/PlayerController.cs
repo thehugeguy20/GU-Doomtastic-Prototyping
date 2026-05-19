@@ -8,6 +8,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Equipment equipment;
     [SerializeField] private ItemDataScriptableObject swordData;
 
+<<<<<<< Updated upstream:Assets/Scripts/Player Specific/PlayerController.cs
+=======
+    public GameObject inventoryUI;
+    private bool inInventory = false;
+
+    void Awake()
+    {
+        if (inventoryUI == null)
+        {
+            inventoryUI = GameObject.Find("Inventory");
+        }
+    }
+
+    void Start()
+    {
+        if (inventoryUI == null)
+        {
+            inventoryUI = GameObject.Find("Inventory");
+        }
+    }
+
+>>>>>>> Stashed changes:Assets/Scripts/PlayerController.cs
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -26,6 +48,13 @@ public class PlayerController : MonoBehaviour
                 {
                     equipment.EquipLeftHand(inventory.GetLast());
                 }
+            }
+
+            // if the collider component's gameobject has a door.cs component,
+            if(hitInfo.collider.gameObject.TryGetComponent<Door>(out Door door))
+            {
+                // then call that door's interact function, telling it that we've called it by passing it ourselves (this.gameobject)
+                door.Interact(this.gameObject);
             }
         }
 
