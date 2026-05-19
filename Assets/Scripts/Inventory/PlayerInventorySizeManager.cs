@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Unity.VisualStudio.Editor;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInventoryUIManager : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class PlayerInventoryUIManager : MonoBehaviour
     public List<Slot> inventorySlots;
 
     public GameObject inventorySlotObject;
+
+    public GameObject itemStatBox;
 
     public EquipSlot rightHandEquipSlot;
     public EquipSlot leftHandEquipSlot;
@@ -73,6 +77,7 @@ public class PlayerInventoryUIManager : MonoBehaviour
         StartDrag();
         UpdateDraggedItemPosition();
         EndDrag();
+        StatBox();
     }
 
     void UpdateSlotData()
@@ -152,12 +157,14 @@ public class PlayerInventoryUIManager : MonoBehaviour
 
                 dragIcon.enabled = false;
                 draggedSlot = null;
+                draggedSlot.pairedItem = null;
                 isDragging = false;
             }
             else
             {
                 DropOnGround(draggedSlot);
                 draggedSlot = null;
+                draggedSlot.pairedItem = null;
                 dragIcon.enabled = false;
                 isDragging = false;
             }
@@ -228,6 +235,38 @@ public class PlayerInventoryUIManager : MonoBehaviour
             if (slot.hovering)
             {
                 return slot;
+            }
+        }
+
+        return null;
+    }
+
+    public Slot StatBox()
+    {
+        foreach(Slot slot in allSlots)
+        {
+            Debug.Log("----------------");
+            Debug.Log("slot.hovering =" + slot.hovering);
+            Debug.Log("slot.pairedItem.title.length = " + slot.pairedItem.title.Length);
+            Debug.Log("----------------");
+
+            if ( slot.hovering && (slot.pairedItem != null || slot.pairedItem.Base == null))
+            {
+                Debug.Log("turning on");
+                itemStatBox.SetActive(true);
+                itemStatBox.transform.position = new Vector3
+                (
+                    Input.mousePosition.x + 230,
+                    Input.mousePosition.y - 275,
+                    Input.mousePosition.z
+                );
+
+                itemStatBox.GetComponentInChildren<StatTextUpdater>().UpdateText(slot);
+            }
+            else
+            {
+                itemStatBox.SetActive(false);
+                Debug.Log("turning off");
             }
         }
 

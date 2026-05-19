@@ -14,6 +14,7 @@ public class Item
 
     [OnValueChanged("AddItemDataSO")]
     internal ItemDataScriptableObject Base;
+
     internal GameObject prefab;
 
     internal Stat attackRange;

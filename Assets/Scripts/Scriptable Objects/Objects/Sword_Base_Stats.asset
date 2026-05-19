@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword_Base_Stats
   m_EditorClassIdentifier: Assembly-CSharp::ItemDataScriptableObject
   prefab: {fileID: 2059709205328724615, guid: e5cf6e97348a346a8af7d231780fcb19, type: 3}
-  baseName: Sword
+  baseName: Mace
   damage:
     isEnabled: 1
     baseValue: 1
