@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1f0c7648d7941b49895036adc42b08, type: 3}
+  m_Name: Spider_Data
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDataScriptableObject
+  prefab: {fileID: 4102012463931480542, guid: 51e286d8784ac4c8494a9302aa8265f2, type: 3}
+  baseHP: {x: 1.0526316, y: 2.5}
+  minHP:
+    isEnabled: 0
+    baseValue: 0
+    min: 0
+    max: 0
+  maxHP:
+    isEnabled: 0
+    baseValue: 0
+    min: 0
+    max: 0
+  baseDEF: {x: 2.6556017, y: 4.647303}
+  minDEF:
+    isEnabled: 0
+    baseValue: 0
+    min: 0
+    max: 0
+  maxDEF:
+    isEnabled: 0
+    baseValue: 0
+    min: 0
+    max: 0
+  baseSPD: {x: 5.7261415, y: 8.091287}
+  minSPD:
+    isEnabled: 0
+    baseValue: 0
+    min: 0
+    max: 0
+  maxSPD:
+    isEnabled: 0
+    baseValue: 0
+    min: 0
+    max: 0
+  damage:
+    isEnabled: 1
+    baseValue: 2
+    min:
+      isEnabled: 0
+      baseValue: 0
+      min: 0
+      max: 0
+    max:
+      isEnabled: 0
+      baseValue: 0
+      min: 0
+      max: 0
+    changes: 0
