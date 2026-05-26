@@ -5,4 +5,6 @@ public class EntityStateManager : StateManager<EntityStateManager, EntityState, 
 {
     internal EnemyStats stats => GetComponentInParent<EnemyCore>().stats;
     internal EnemyCore core => GetComponentInParent<EnemyCore>();
+
+    internal LevelCore lvlCore => GameObject.Find("Level").GetComponent<LevelCore>();
 }

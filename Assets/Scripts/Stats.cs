@@ -78,30 +78,17 @@ public class Stat
     public AdditiveModifiers additives = new();
 
     // the sum of the base stat + it's modifiers
-    public float total => additives.CalculateTotal(flats.CalculateTotal(baseValue));
+    public float total => baseValue;
 
     // this is where things like damage from enemies or temporary changes to the total are stored
     public float changes;
 
     // so then the value = (the sum of the base stat + it's modifiers) + it's changes
-    public float value => Mathf.Clamp(total + changes, min.value, max.value);
+    public float value => (total + changes);
 
     public void ChangeStat(float newChange)
     {
-        if( max.isEnabled && total + changes + newChange > max.value)
-        {
-            Debug.Log("can't change stat over max value!");
-            return;
-        }
-        else if ( min.isEnabled && total + changes + newChange < min.value)
-        {
-            Debug.Log("can't change stat under min value!");
-            return;
-        }
-        else
-        {
-            changes += newChange;
-        }
+        changes += newChange;
     }
 
     public Stat(bool _toggleable, MiniStat _min, MiniStat _max)
@@ -135,7 +122,7 @@ public class MiniStat
     public float min;
     public float max;
 
-    public float value => Mathf.Clamp(additives.CalculateTotal(flats.CalculateTotal(baseValue)), min, max);
+    public float value => baseValue;
 
     public MiniStat(bool _toggleable, float _baseVal, float _min, float _max)
     {

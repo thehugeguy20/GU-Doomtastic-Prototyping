@@ -37,4 +37,14 @@ public class TimeScaleManager : MonoBehaviour
         Time.timeScale = 1.0f;
         yield return null;
     }
+
+    public void StopTime()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void StartTime()
+    {
+        Time.timeScale = 1f;
+    }
 }

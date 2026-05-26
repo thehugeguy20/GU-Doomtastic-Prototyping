@@ -5,10 +5,12 @@ public class PlayerStats : MonoBehaviour
     internal PlayerDataScriptableObject Base;
     internal GameObject prefab;
 
-    internal Stat health;
+    [SerializeField] internal float health;
     internal Stat defense;
     internal Stat speed;
     internal Stat agility;
+
+    [SerializeField] private GameObject deathPanel;
     
     public PlayerStats(PlayerDataScriptableObject _base)
     {
@@ -20,13 +22,26 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        health = 10f;
+    }
+
     private void AddSOData()
     {
         prefab = Base.prefab;
 
-        health = Base.health;
         defense = Base.defense;
         speed = Base.speed;
         agility = Base.agility;
+    }
+
+    void Update()
+    {
+        if (health <= 0f)
+        {
+            deathPanel.SetActive(true);
+            GameObject.Find("Time Scale Manager").GetComponent<TimeScaleManager>().StopTime();
+        }
     }
 }

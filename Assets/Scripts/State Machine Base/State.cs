@@ -20,7 +20,11 @@ public abstract class State<TStateManager, TState, TAction> : MonoBehaviour
 
     void Awake()
     {
-        manager = transform.parent.GetComponent<TStateManager>();
+        if (manager == null)
+        {
+            manager = transform.parent.GetComponent<TStateManager>();
+        }
+
     }
 
     public virtual void Enter(TState _lastState)

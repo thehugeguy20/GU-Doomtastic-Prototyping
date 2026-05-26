@@ -2,10 +2,23 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
 {
-    public LevelManager levelManager;
-    public void Interact(GameObject interactor)
+
+    public REALLevelManagerREAL levelManager;
+
+    void Start()
     {
-        throw new System.NotImplementedException();
+        levelManager = GameObject.Find("Level Manager").GetComponent<REALLevelManagerREAL>();
     }
 
+    public void Interact(GameObject interactor)
+    {
+        if (interactor.TryGetComponent(out PlayerCore playerCore))
+        {
+            Debug.Log("door time");
+            if (levelManager.aliveEnemies == 0)
+            {
+                levelManager.ChangeLevel();
+            }
+        }
+    }
 }

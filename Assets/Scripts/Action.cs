@@ -10,7 +10,7 @@ where TAction : Action<TManager, TState, TAction>
 {
     public List<TState> states = new();
 
-    internal TState state;
+    [SerializeField] internal TState state;
     [SerializeField] private TState defaultState;
 
     public void ReturnToDefault()

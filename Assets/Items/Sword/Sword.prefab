@@ -48,7 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580eb555dd13848179fede002501cad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  states: []
+  states:
+  - {fileID: 8884538598508207201}
+  - {fileID: 4006126889311370548}
+  - {fileID: 2906373871176032412}
+  - {fileID: 8765389843332267625}
   defaultState: {fileID: 8884538598508207201}
 --- !u!1 &1979954428293339954
 GameObject:

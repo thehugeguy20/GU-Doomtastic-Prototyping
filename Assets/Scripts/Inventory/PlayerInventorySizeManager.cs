@@ -245,14 +245,14 @@ public class PlayerInventoryUIManager : MonoBehaviour
     {
         foreach(Slot slot in allSlots)
         {
-            Debug.Log("----------------");
-            Debug.Log("slot.hovering =" + slot.hovering);
-            Debug.Log("slot.pairedItem.title.length = " + slot.pairedItem.title.Length);
-            Debug.Log("----------------");
+            // Debug.Log("----------------");
+            // Debug.Log("slot.hovering =" + slot.hovering);
+            // Debug.Log("slot.pairedItem.title.length = " + slot.pairedItem.title.Length);
+            // Debug.Log("----------------");
 
             if ( slot.hovering && (slot.pairedItem != null || slot.pairedItem.Base == null))
             {
-                Debug.Log("turning on");
+                //Debug.Log("turning on");
                 itemStatBox.SetActive(true);
                 itemStatBox.transform.position = new Vector3
                 (
@@ -266,7 +266,7 @@ public class PlayerInventoryUIManager : MonoBehaviour
             else
             {
                 itemStatBox.SetActive(false);
-                Debug.Log("turning off");
+                //Debug.Log("turning off");
             }
         }
 

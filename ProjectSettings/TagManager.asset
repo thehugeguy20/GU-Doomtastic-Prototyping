@@ -9,6 +9,7 @@ TagManager:
   - Rule Tile
   - Grid
   - inventorySlot
+  - Enemy
   layers:
   - Default
   - TransparentFX

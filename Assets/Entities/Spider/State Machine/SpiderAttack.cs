@@ -15,7 +15,9 @@ public class SpiderAttack : EntityState
     {
         if (attacked == false && time > 0.5f && Vector3.Distance(this.transform.position, playerPos) < 2.3)
         {
-            player.GetComponentInParent<PlayerCore>().stats.health.ChangeStat(manager.stats.damage.value);
+            Debug.Log("spider_attacking");
+            //player.GetComponentInParent<PlayerCore>().stats.health -= 1f;
+            GameObject.Find("Player").GetComponent<PlayerStats>().health -=1f;
 
             attacked = true;
         }

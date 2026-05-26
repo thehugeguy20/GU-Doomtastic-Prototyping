@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Inventory inventory;
     [SerializeField] private Equipment equipment;
     [SerializeField] private ItemDataScriptableObject swordData;
+    [SerializeField] private PlayerCore playerCore;
+    [SerializeField] private EquipSlot rightHand;
+    [SerializeField] private EquipSlot leftHand;
+
+    [SerializeField] private bool goingToAttack;
 
     public GameObject inventoryUI;
     private bool inInventory = false;
@@ -28,7 +33,7 @@ public class PlayerController : MonoBehaviour
             //cast a ray from camera, and returns information about what was hit (if something was)
             RaycastHit hitInfo = rayCaster.Cast(RayCaster.FindType.LineForward);
 
-            // if the collider component's gameobject has a pickup.cs component,
+            // if the collider's gameobject has a pickup.cs component,
             if(hitInfo.collider.gameObject.TryGetComponent<Pickup>(out Pickup pickup))
             {
                 // then call that pickup's interact function, telling it that we've called it by passing it ourselves (this.gameobject)
@@ -42,7 +47,16 @@ public class PlayerController : MonoBehaviour
                 {
                     equipment.EquipLeftHand(inventory.GetLast());
                 }
+
             }
+
+            // if the collider is a door
+            if(hitInfo.collider.gameObject.TryGetComponent<Door>(out Door door))
+            {
+                // then call that door's interact function, telling it that we've called it by passing it ourselves (this.gameobject)
+                door.Interact(this.gameObject);
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -88,5 +102,35 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!rightHand.isEmpty)
+            {
+                rightHand.GetComponentInChildren<ItemCore>().manager.action.state.ChangeState(rightHand.GetComponentInChildren<ItemCore>().manager.action.FindState("PullBack"));
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (!rightHand.isEmpty)
+            {
+                if (rightHand.GetComponentInChildren<ItemCore>().manager.action.state.name == "Hold")
+                {
+                    rightHand.GetComponentInChildren<ItemCore>().manager.action.state.ChangeState(rightHand.GetComponentInChildren<ItemCore>().manager.action.FindState("Swing"));
+                }
+                else if (rightHand.GetComponentInChildren<ItemCore>().manager.action.state.name == "PullBack")
+                {
+                    goingToAttack = true;
+                }
+            }
+        }
+
+        if (!rightHand.isEmpty && rightHand.GetComponentInChildren<ItemCore>().manager.action.state.name == "PullBack" && goingToAttack == true)
+        {
+            rightHand.GetComponentInChildren<ItemCore>().manager.action.state.ChangeState(rightHand.GetComponentInChildren<ItemCore>().manager.action.FindState("Swing"));
+            goingToAttack = false;
+        }
+
     }
+
 }
