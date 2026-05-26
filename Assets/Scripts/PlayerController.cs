@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
             Item item = new(swordData);
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && (1 + 2 == 6))
         {
             if (inInventory == true)
             {
